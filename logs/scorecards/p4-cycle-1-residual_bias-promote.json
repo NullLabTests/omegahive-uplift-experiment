@@ -1,0 +1,384 @@
+{
+  "after_21": {
+    "active": [
+      "uncertainty_planning",
+      "residual_bias"
+    ],
+    "aggregate_primary": 0.9097,
+    "aggregate_robustness": 0.5048,
+    "envs": {
+      "maze": {
+        "efficiency": 0.834,
+        "env": "maze",
+        "robustness": 0.5048,
+        "steps": 29.1095,
+        "success_rate": 0.8119,
+        "transfer_gain": 0.1476
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 0.09523809523809523,
+        "robustness": 0.9048,
+        "steps": 5.0,
+        "success_rate": 0.9881
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82295,
+      "repoops": 0.9881,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707,
+      808,
+      909,
+      1001,
+      1102,
+      1203,
+      1304,
+      1405,
+      1506,
+      1607,
+      1708,
+      1809,
+      1910,
+      2011,
+      2112
+    ]
+  },
+  "after_7": {
+    "active": [
+      "uncertainty_planning",
+      "residual_bias"
+    ],
+    "aggregate_primary": 0.9085,
+    "aggregate_robustness": 0.3143,
+    "envs": {
+      "maze": {
+        "efficiency": 0.8936,
+        "env": "maze",
+        "robustness": 0.3143,
+        "steps": 24.4,
+        "success_rate": 0.7571,
+        "transfer_gain": 0.1429
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 0.14285714285714285,
+        "robustness": 0.8571,
+        "steps": 5.0,
+        "success_rate": 0.9821
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82535,
+      "repoops": 0.9821,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "before_21": {
+    "active": [
+      "uncertainty_planning"
+    ],
+    "aggregate_primary": 0.8847,
+    "aggregate_robustness": 0.4286,
+    "envs": {
+      "maze": {
+        "efficiency": 0.834,
+        "env": "maze",
+        "robustness": 0.5048,
+        "steps": 29.1095,
+        "success_rate": 0.8119,
+        "transfer_gain": 0.1476
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 0.6666666666666666,
+        "robustness": 0.4286,
+        "steps": 5.0,
+        "success_rate": 0.9167
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82295,
+      "repoops": 0.9167,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707,
+      808,
+      909,
+      1001,
+      1102,
+      1203,
+      1304,
+      1405,
+      1506,
+      1607,
+      1708,
+      1809,
+      1910,
+      2011,
+      2112
+    ]
+  },
+  "before_7": {
+    "active": [
+      "uncertainty_planning"
+    ],
+    "aggregate_primary": 0.871,
+    "aggregate_robustness": 0.2857,
+    "envs": {
+      "maze": {
+        "efficiency": 0.8936,
+        "env": "maze",
+        "robustness": 0.3143,
+        "steps": 24.4,
+        "success_rate": 0.7571,
+        "transfer_gain": 0.1429
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 1.0,
+        "robustness": 0.2857,
+        "steps": 5.0,
+        "success_rate": 0.875
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82535,
+      "repoops": 0.875,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "const_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707
+  ],
+  "constitutional_reference_21": {
+    "after_primary": 0.9097,
+    "after_robustness": 0.5048,
+    "before_primary": 0.8847,
+    "before_robustness": 0.4286,
+    "delta_primary": 0.025,
+    "delta_robustness": 0.0762,
+    "mechanism": "residual_bias",
+    "rel_delta_primary": 0.0283,
+    "rule": {
+      "park_threshold": ">= -5% rel primary",
+      "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+    },
+    "verdict": "PARK"
+  },
+  "constitutional_reference_7": {
+    "after_primary": 0.9085,
+    "after_robustness": 0.3143,
+    "before_primary": 0.871,
+    "before_robustness": 0.2857,
+    "delta_primary": 0.0375,
+    "delta_robustness": 0.0286,
+    "mechanism": "residual_bias",
+    "rel_delta_primary": 0.0431,
+    "rule": {
+      "park_threshold": ">= -5% rel primary",
+      "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+    },
+    "verdict": "PARK"
+  },
+  "cycle": 1,
+  "ext_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707,
+    808,
+    909,
+    1001,
+    1102,
+    1203,
+    1304,
+    1405,
+    1506,
+    1607,
+    1708,
+    1809,
+    1910,
+    2011,
+    2112
+  ],
+  "gate": "per-domain (EXPERIMENTAL, not constitutional)",
+  "incumbent": [
+    "uncertainty_planning"
+  ],
+  "mechanism": "residual_bias",
+  "name": "p4-cycle-1-residual_bias-promote",
+  "phase": "phase4",
+  "variance_promoting_domain": {
+    "count": 21,
+    "domain": "repoops",
+    "max": 0.25,
+    "mean": 0.0714,
+    "min": 0.0,
+    "negative": 0,
+    "positive": 11,
+    "sd": 0.0729
+  },
+  "verdict_21": {
+    "after_primary": 0.9097,
+    "after_robustness": 0.5048,
+    "any_domain_gain_ge_5pct": true,
+    "before_primary": 0.8847,
+    "before_robustness": 0.4286,
+    "delta_primary": 0.025,
+    "delta_robustness": 0.0762,
+    "domain_primaries": {
+      "maze": {
+        "after": 0.8229,
+        "before": 0.8229,
+        "delta": 0.0,
+        "rel_delta": 0.0
+      },
+      "repoops": {
+        "after": 0.9881,
+        "before": 0.9167,
+        "delta": 0.0714,
+        "rel_delta": 0.0779
+      },
+      "selflab": {
+        "after": 0.9386,
+        "before": 0.9386,
+        "delta": 0.0,
+        "rel_delta": 0.0
+      }
+    },
+    "mechanism": "residual_bias",
+    "no_domain_drop_gt_3pct": true,
+    "promoting_domain": "repoops",
+    "promoting_domain_rel": 0.0779,
+    "rel_delta_primary": 0.0283,
+    "rule": {
+      "constitutional": false,
+      "name": "per-domain promotion gate (EXPERIMENTAL VARIANT, not constitutional)",
+      "park_threshold": "aggregate rel >= -5%",
+      "promote_threshold": "ANY domain primary >= +5% rel AND no domain drop > -3% rel",
+      "reject_threshold": "aggregate rel < -5%"
+    },
+    "verdict": "PROMOTE",
+    "worst_domain": "maze",
+    "worst_domain_rel": 0.0
+  },
+  "verdict_7": {
+    "after_primary": 0.9085,
+    "after_robustness": 0.3143,
+    "any_domain_gain_ge_5pct": true,
+    "before_primary": 0.871,
+    "before_robustness": 0.2857,
+    "delta_primary": 0.0375,
+    "delta_robustness": 0.0286,
+    "domain_primaries": {
+      "maze": {
+        "after": 0.8254,
+        "before": 0.8254,
+        "delta": 0.0,
+        "rel_delta": 0.0
+      },
+      "repoops": {
+        "after": 0.9821,
+        "before": 0.875,
+        "delta": 0.1071,
+        "rel_delta": 0.1224
+      },
+      "selflab": {
+        "after": 0.9386,
+        "before": 0.9386,
+        "delta": 0.0,
+        "rel_delta": 0.0
+      }
+    },
+    "mechanism": "residual_bias",
+    "no_domain_drop_gt_3pct": true,
+    "promoting_domain": "repoops",
+    "promoting_domain_rel": 0.1224,
+    "rel_delta_primary": 0.0431,
+    "rule": {
+      "constitutional": false,
+      "name": "per-domain promotion gate (EXPERIMENTAL VARIANT, not constitutional)",
+      "park_threshold": "aggregate rel >= -5%",
+      "promote_threshold": "ANY domain primary >= +5% rel AND no domain drop > -3% rel",
+      "reject_threshold": "aggregate rel < -5%"
+    },
+    "verdict": "PROMOTE",
+    "worst_domain": "maze",
+    "worst_domain_rel": 0.0
+  }
+}

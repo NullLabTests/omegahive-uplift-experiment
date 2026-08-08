@@ -1,6 +1,7 @@
 {
   "active": [
-    "uncertainty_planning"
+    "uncertainty_planning",
+    "residual_bias"
   ],
   "baseline": {
     "baseline_21": {
@@ -113,8 +114,25 @@
       "uncertainty_planning"
     ]
   },
-  "cycles": {},
+  "cycles": {
+    "p4-1": {
+      "active_after": [
+        "uncertainty_planning",
+        "residual_bias"
+      ],
+      "after_primary": 0.9097,
+      "before_primary": 0.8847,
+      "mechanism": "residual_bias",
+      "promoting_domain": "repoops",
+      "promoting_domain_rel": 0.0779,
+      "rel_delta_primary": 0.0283,
+      "verdict": "PROMOTE",
+      "worst_domain_rel": 0.0
+    }
+  },
   "parked": [],
-  "promoted": [],
+  "promoted": [
+    "residual_bias"
+  ],
   "rejected": []
 }
