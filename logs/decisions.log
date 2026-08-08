@@ -53,3 +53,8 @@
 [2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 frontier_memory_v2: 21seed before=0.8847 after=0.8970 rel=+1.4% rob=+0.0000 => PARK  | 7seed rel=+0.6% verdict=PARK  | per-env {'maze': 0.0309, 'repoops': 0.0, 'selflab': 0.0}
 [2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 target-domain variance (maze, 21 seeds): mean=+0.0308 sd=0.1146 min=-0.1187 max=+0.5101 positive 11/21 negative 5/21
 [2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 transfer probe: {'mechC_in_repoops': 0.0, 'mechC_in_selflab': 0.0}
+[2026-08-08 18:08:28] GIT: committed chained-cycle-3-frontier_memory_v2-park
+[2026-08-08 18:08:28] INFO: phase3 cycle-4 starts; mech=evidence_substrate incumbent=['uncertainty_planning'] target=maze
+[2026-08-08 18:08:34] GOVERNOR: phase3-cycle-4 evidence_substrate: 21seed before=0.8847 after=0.9220 rel=+4.2% rob=+0.0952 => PARK  | 7seed rel=+4.9% verdict=PARK  | per-env {'maze': 0.0309, 'repoops': 0.0714, 'selflab': 0.0}
+[2026-08-08 18:08:34] GOVERNOR: phase3-cycle-4 target-domain variance (maze, 21 seeds): mean=+0.0308 sd=0.1146 min=-0.1187 max=+0.5101 positive 11/21 negative 5/21
+[2026-08-08 18:08:34] GOVERNOR: phase3-cycle-4 transfer probe: {'mechD_in_selflab': 0.0, 'mechD_in_maze': 0.0309, 'mechD_in_repoops': 0.0714}

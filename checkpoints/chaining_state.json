@@ -109,6 +109,65 @@
     "uncertainty_planning"
   ],
   "results": {
+    "evidence_substrate": {
+      "cycle": 4,
+      "incumbent": [
+        "uncertainty_planning"
+      ],
+      "mech": "evidence_substrate",
+      "per_env_delta_21": {
+        "maze": 0.0309,
+        "repoops": 0.0714,
+        "selflab": 0.0
+      },
+      "scorecard": "p3-cycle-4-evidence_substrate",
+      "target_domain": "maze",
+      "transfer_probe": {
+        "mechD_in_maze": 0.0309,
+        "mechD_in_repoops": 0.0714,
+        "mechD_in_selflab": 0.0
+      },
+      "variance_target": {
+        "count": 21,
+        "domain": "maze",
+        "max": 0.5101,
+        "mean": 0.0308,
+        "min": -0.1187,
+        "negative": 5,
+        "positive": 11,
+        "sd": 0.1146
+      },
+      "verdict_21": {
+        "after_primary": 0.922,
+        "after_robustness": 0.5238,
+        "before_primary": 0.8847,
+        "before_robustness": 0.4286,
+        "delta_primary": 0.0373,
+        "delta_robustness": 0.0952,
+        "mechanism": "evidence_substrate",
+        "rel_delta_primary": 0.0422,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      },
+      "verdict_7": {
+        "after_primary": 0.9136,
+        "after_robustness": 0.3714,
+        "before_primary": 0.871,
+        "before_robustness": 0.2857,
+        "delta_primary": 0.0426,
+        "delta_robustness": 0.0857,
+        "mechanism": "evidence_substrate",
+        "rel_delta_primary": 0.0489,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      }
+    },
     "frontier_memory": {
       "cycle": 2,
       "incumbent": [

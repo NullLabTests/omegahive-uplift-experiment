@@ -62,6 +62,17 @@
       "mechanism": "frontier_memory_v2",
       "rel_delta_primary": 0.0139,
       "verdict": "PARK"
+    },
+    "chained-4": {
+      "active_after": [
+        "uncertainty_planning"
+      ],
+      "after_primary": 0.922,
+      "before_primary": 0.8847,
+      "delta_robustness": 0.0952,
+      "mechanism": "evidence_substrate",
+      "rel_delta_primary": 0.0422,
+      "verdict": "PARK"
     }
   },
   "parked": [
@@ -69,7 +80,8 @@
     "attention_budget",
     "residual_bias",
     "frontier_memory",
-    "frontier_memory_v2"
+    "frontier_memory_v2",
+    "evidence_substrate"
   ],
   "promoted": [
     "uncertainty_planning"
