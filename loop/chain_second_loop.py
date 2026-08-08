@@ -293,9 +293,9 @@ def write_strategy_scorecard(verdict: dict, arms: dict) -> None:
         f"{arms[2]['q']:+.6f} | {arms[2]['negative_seeds']}/21 |",
         "", "## Conditions", "",
         f"- Q1 >= 1.05*Q0 : **{verdict['conditions']['q1_ge_1p05_q0']}** "
-        f"({verdict['q']['1']:.6f} vs 1.05*{verdict['q']['0']:.6f})",
+        f"({verdict['q'][1]:.6f} vs 1.05*{verdict['q'][0]:.6f})",
         f"- Q1 >= 1.05*Q2 : **{verdict['conditions']['q1_ge_1p05_q2']}** "
-        f"({verdict['q']['1']:.6f} vs 1.05*{verdict['q']['2']:.6f})",
+        f"({verdict['q'][1]:.6f} vs 1.05*{verdict['q'][2]:.6f})",
         f"- no task-axis regression : **{verdict['conditions']['no_task_axis_regression']}** "
         f"(arm1 neg {arms[1]['negative_seeds']} <= arm0 neg {arms[0]['negative_seeds']})",
         f"- memo attribution (matched per-seed Q1>Q2) : "
@@ -546,8 +546,8 @@ def main() -> None:
         state["cycle2"] = cycle2
         outcome["cycle2"] = cycle2
         proposal_state.save(state)
-        print(json.dumps({"outcome": "H-VC", "q0": verdict["q"]["0"],
-                          "q1": verdict["q"]["1"], "q2": verdict["q"]["2"],
+        print(json.dumps({"outcome": "H-VC", "q0": verdict["q"][0],
+                          "q1": verdict["q"][1], "q2": verdict["q"][2],
                           "second_cycle_aggregate": cycle2["final_aggregate"],
                           "compounding_excess": cycle2["compounding_excess"]},
                          indent=2))
@@ -556,8 +556,8 @@ def main() -> None:
                      f"p6 strategy verdict {verdict['verdict']}: in-band "
                      f"machinery produced no measured compounding (H-LIN "
                      f"supported); no monotonicity cycle run")
-        print(json.dumps({"outcome": "H-LIN", "q0": verdict["q"]["0"],
-                          "q1": verdict["q"]["1"], "q2": verdict["q"]["2"],
+        print(json.dumps({"outcome": "H-LIN", "q0": verdict["q"][0],
+                          "q1": verdict["q"][1], "q2": verdict["q"][2],
                           "verdict": verdict["verdict"]}, indent=2))
 
     log_decision("INFO",
