@@ -1,4 +1,6 @@
-# OmegaHive — An Empirical Test of the Self-Uplifting Loop Hypothesis
+# 🐝 OmegaHive — An Empirical Test of the Self-Uplifting Loop Hypothesis
+
+> **Experiment status: COMPLETE — six phases, ~45 measured configurations, final hive 0.9480.**
 
 A governed, reproducible experiment testing whether an AI "hive" can improve
 itself through Ben Goertzel's *incremental self-uplifting loop*: start from a
@@ -7,10 +9,15 @@ baseline hive, add **one cognitive mechanism at a time**, evaluate it in a
 reject** based on transparent governance — and repeat, hoping each cycle makes
 the next one easier (the "virtuous cycle").
 
-This repository contains the complete, runnable implementation, all five phases
+This repository contains the complete, runnable implementation, all six phases
 of the experiment, every measurement, and an honest analysis. **All code is pure
 Python 3.12 with zero third-party dependencies. Every number in every report is
 reproducible with one command.**
+
+![python](https://img.shields.io/badge/python-3.12-blue)
+![deps](https://img.shields.io/badge/dependencies-zero-green)
+![deterministic](https://img.shields.io/badge/21%20seeds-deterministic-orange)
+![status](https://img.shields.io/badge/status-complete-darkgreen)
 
 ---
 
@@ -23,16 +30,20 @@ reproducible with one command.**
 | 3 | Hypothesis tests (noise vs calibration; single-domain vs multi-domain) + offline counterfactual rule analysis | The gate/weighting design — not the mechanisms — is the binding constraint |
 | 4 | Real run under an experimental per-domain promotion gate | 1/2 promoted — the loop *can* improve again, but candidate overlap makes compounding illusory |
 | 5 | Non-redundancy test: an orthogonal Maze mechanism chained onto the grown hive | **1/1 PROMOTED — final hive 0.9480 beats the 0.9220 single-shot ceiling.** Compounding confirmed in the additive sense |
+| 6 | Second loop: the proposal machinery made in-band (a strategy mechanism on a `propose` hook) with a randomized-memo control | **0/1 promoted — H-LIN supported.** The strategy's guidance measurably reduced harm (Q −0.403 → −0.320) but never produced positive proposal quality (7/7/7 matched seeds) |
 
-**Five-phase answer:** the loop genuinely self-improves **one step at a time**,
+**Six-phase answer:** the loop genuinely self-improves **one step at a time**,
 and — once the redundancy confound is removed — sequences of *non-overlapping*
 mechanisms **stack additively and beat any single-shot ceiling**. Final hive
 aggregate **0.9480**, up **+22.0% cumulative** from the phase-1 baseline of
-0.7768. However, the compounding excess is exactly **+0.0000**: gains accumulate
-linearly, not multiplicatively. Goertzel's strong claim (self-improvement
-amplifying itself super-additively into a runaway virtuous cycle) remains
-**unsupported**; the loop is a working *additive self-assembler for
-non-overlapping headroom*, not yet an accelerator.
+0.7768. The compounding excess is exactly **+0.0000**: gains accumulate
+linearly, not multiplicatively. And Phase 6 closes the last structural gap —
+making the proposal machinery itself in-band — and still finds **no
+machinery-level compounding**: LLM-proposed mechanism gains are first-order.
+Goertzel's strong claim (self-improvement amplifying itself super-additively
+into a runaway virtuous cycle) remains **unsupported at every level tested**;
+the loop is a working *additive self-assembler for non-overlapping headroom*,
+not an accelerator.
 
 ---
 
@@ -262,6 +273,40 @@ configuration, and each promotion is a real, measured, orthogonal gain —
 but there is no multiplicative term. From the phase-1 baseline of 0.7768 the
 final hive is **+22.0% cumulative**.
 
+### Phase 6 — the second loop (does in-band proposal machinery compound?)
+
+The phase-5 result exposed the deepest structural gap: the improvement
+machinery sat *outside* the hive — `loop/architect.py` is static data, so the
+loop never read its own history into the next proposal. Phase 6 closed that
+gap: a **strategy mechanism** (`success_signature_policy`, zero task-hook
+handlers) now sits on a new in-band `propose` hook, reads a proposal-state
+substrate (headroom map, promotion signatures, overlap table), and emits a
+PROPOSAL MEMO — the *only* channel from history to the next proposed
+mechanism. Three arms, same probe class (`frontier_memory_v3`), tuned per-arm
+only via the memo, measured against the mature 0.9480 incumbent:
+
+| arm | condition | probe config | agg delta | Q (delta/headroom) | neg seeds |
+|---|---|---|---|---|---|
+| 0 | baseline (empty memo) | naive | −0.0327 | **−0.402803** | 15/21 |
+| 1 | strategy memo (real history) | calibrated | −0.0260 | **−0.320221** | 16/21 |
+| 2 | **permuted-memo control** | naive fallback | −0.0327 | **−0.402803** | 15/21 |
+
+**Verdict: PARK → H-LIN supported.** The strategy's guidance is real and
+distinguishable (arm 1 ≠ arm 2; the permutation control degraded guidance to
+the no-guidance default, so Q2 == Q0 exactly) — but proposal quality never went
+positive, negative seeds regressed (16 > 15), and the matched per-seed split is
+exactly **7/7/7**. In-band machinery produces informational gains (variance
+reduction), not compounding. The monotonicity cycle never ran (no promotion),
+so no second-cycle compounding excess exists to compute.
+
+> **📌 The capability-ceiling caveat (stated explicitly, as required):** even a
+> positive H-VC result here would be machinery-level compounding only. No
+> mechanism modifies the LLM oracle's fixed capability, so the strongest form of
+> the self-uplifting claim — that the agent's proposing ability itself grows —
+> remains untested and untestable in this architecture. Phase 6 does not change
+> that; it makes the boundary statement sharper: **even with machinery-level
+> feedback, LLM-proposed mechanism gains are first-order.**
+
 ---
 
 ## The honest bottom line
@@ -272,15 +317,22 @@ final hive is **+22.0% cumulative**.
 - ✅ **Non-overlapping mechanisms chain additively and break single-shot
   ceilings** (phase 5: 0.9480 > 0.9220). With candidate redundancy removed, the
   loop is a working additive self-assembler across domain headrooms.
-- ❌ The **super-additive virtuous cycle does not emerge** in five phases and
-  ~40 measured configurations. The compounding excess is exactly **+0.0000**:
-  gains accumulate linearly, not multiplicatively. Self-amplification remains
-  unsupported.
+- ✅ **In-band proposal machinery works as designed** (phase 6): the strategy
+  mechanism read real history, produced distinguishable guidance, and the
+  permuted-memo control confirmed the attribution — a methodological template
+  for anyone testing "agent self-improvement."
+- ❌ The **super-additive virtuous cycle does not emerge** in six phases and
+  ~45 measured configurations. The compounding excess is exactly **+0.0000**,
+  and closing the feedback loop (phase 6) still yields first-order gains only:
+  guidance reduced a bad probe's harm but never made proposal quality positive.
+  Self-amplification remains unsupported at every level tested.
 - 🔬 Three design-level findings, each separately valuable: (1) a single
   aggregate gate hides within-domain gains; (2) per-domain gates fix that but
   invite cherry-picking and drop the robustness guard; (3) **candidate overlap
   is the hidden killer of compounding** — evaluating candidates in isolation
-  systematically overestimates compounding potential (the phase-4 callout above).
+  systematically overestimates compounding potential (the phase-4 callout above),
+  and even with overlap fixed, the capability ceiling (a fixed LLM designer)
+  keeps gains first-order (phase 6).
 
 ## How to reproduce everything
 
@@ -301,6 +353,9 @@ python3 -m loop.chain_perdomain
 # phase-5 non-redundancy run (chain_perdomain2 protocol)
 python3 -m loop.chain_perdomain2
 
+# phase-6 second-loop protocol (in-band proposal machinery, 3 arms + strategy gate)
+python3 -m loop.chain_second_loop
+
 # offline governance counterfactual (reads scorecards only)
 python3 -m loop.counterfactual
 
@@ -320,6 +375,8 @@ prints/stores the same numbers in the reports.
 | `PHASE3_REPORT.md` | Phase-3: hypothesis tests + counterfactual rule analysis |
 | `PHASE4_REPORT.md` | Phase-4: real-run falsification of the per-domain gate prediction |
 | `PHASE5_REPORT.md` | Phase-5: the non-redundancy test — compounding confirmed (additive) |
+| `PHASE6_REPORT.md` | Phase-6: the second loop — in-band machinery tested, H-LIN supported |
+| `STATUS.md` | Up-to-date status with all phase results and final hive state |
 | `EXPERIMENT_LOG.md` | Full narrative of the run |
 | `logs/scorecards/` | Raw before/after score vectors for every measured configuration |
 | `logs/decisions.log` | Every architectural decision, verdict, and error |
