@@ -109,6 +109,53 @@
     "uncertainty_planning"
   ],
   "results": {
+    "frontier_memory": {
+      "cycle": 2,
+      "incumbent": [
+        "uncertainty_planning"
+      ],
+      "mech": "frontier_memory",
+      "per_env_delta_21": {
+        "maze": 0.0141,
+        "repoops": 0.0,
+        "selflab": 0.0
+      },
+      "transfer_probe": {
+        "mechA_in_maze": 0.0141,
+        "mechB_in_repoops": 0.0,
+        "mechB_in_selflab": 0.0
+      },
+      "verdict_21": {
+        "after_primary": 0.8903,
+        "after_robustness": 0.4286,
+        "before_primary": 0.8847,
+        "before_robustness": 0.4286,
+        "delta_primary": 0.0056,
+        "delta_robustness": 0.0,
+        "mechanism": "frontier_memory",
+        "rel_delta_primary": 0.0063,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      },
+      "verdict_7": {
+        "after_primary": 0.8814,
+        "after_robustness": 0.2857,
+        "before_primary": 0.871,
+        "before_robustness": 0.2857,
+        "delta_primary": 0.0104,
+        "delta_robustness": 0.0,
+        "mechanism": "frontier_memory",
+        "rel_delta_primary": 0.0119,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      }
+    },
     "residual_bias": {
       "cycle": 1,
       "incumbent": [

@@ -31,3 +31,7 @@
 [2026-08-08 17:29:09] INFO: chained-cycle-1 starts; mech=residual_bias incumbent=['uncertainty_planning']
 [2026-08-08 17:29:12] GOVERNOR: chained-cycle-1 residual_bias: 21seed before=0.8847 after=0.9097 rel=+2.8% rob=+0.0762 => PARK  | 7seed rel=+4.3% verdict=PARK  | per-env {'maze': 0.0, 'repoops': 0.0714, 'selflab': 0.0}
 [2026-08-08 17:29:12] GOVERNOR: chained-cycle-1 transfer probe: {'mechA_in_maze': 0.0, 'mechB_in_repoops': 0.0714, 'mechB_in_selflab': 0.0}
+[2026-08-08 17:29:12] GIT: committed chained-cycle-1-residual_bias-park
+[2026-08-08 17:29:12] INFO: chained-cycle-2 starts; mech=frontier_memory incumbent=['uncertainty_planning']
+[2026-08-08 17:29:15] GOVERNOR: chained-cycle-2 frontier_memory: 21seed before=0.8847 after=0.8903 rel=+0.6% rob=+0.0000 => PARK  | 7seed rel=+1.2% verdict=PARK  | per-env {'maze': 0.0141, 'repoops': 0.0, 'selflab': 0.0}
+[2026-08-08 17:29:15] GOVERNOR: chained-cycle-2 transfer probe: {'mechA_in_maze': 0.0141, 'mechB_in_repoops': 0.0, 'mechB_in_selflab': 0.0}

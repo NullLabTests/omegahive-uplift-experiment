@@ -40,12 +40,24 @@
       "mechanism": "residual_bias",
       "rel_delta_primary": 0.0283,
       "verdict": "PARK"
+    },
+    "chained-2": {
+      "active_after": [
+        "uncertainty_planning"
+      ],
+      "after_primary": 0.8903,
+      "before_primary": 0.8847,
+      "delta_robustness": 0.0,
+      "mechanism": "frontier_memory",
+      "rel_delta_primary": 0.0063,
+      "verdict": "PARK"
     }
   },
   "parked": [
     "memory_consolidation",
     "attention_budget",
-    "residual_bias"
+    "residual_bias",
+    "frontier_memory"
   ],
   "promoted": [
     "uncertainty_planning"
