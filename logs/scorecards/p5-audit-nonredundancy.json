@@ -1,13 +1,18 @@
 {
   "beats_ceiling": 0.026,
   "compounding_analysis": {
-    "actual_final_hive": 0.948,
     "additive_projection": 0.948,
-    "base_up": 0.8847,
+    "beats_ceiling": 0.026,
     "compounding_excess": 0.0,
-    "note": "chain is perfectly ADDITIVE (orthogonal stack), not super-additive",
-    "pt_gain": 0.0383,
-    "rb_gain": 0.025
+    "cycle_gain": 0.0383,
+    "final_hive": [
+      "uncertainty_planning",
+      "residual_bias",
+      "progress_thermostat"
+    ],
+    "final_hive_primary_21": 0.948,
+    "incumbent_primary": 0.9097,
+    "phase4_ceiling": 0.922
   },
   "final_hive_primary_21": 0.948,
   "incumbent": [
