@@ -1,12 +1,21 @@
 {
   "active": [],
   "cycles": {
+    "1": {
+      "active_after": [],
+      "after_primary": 0.8081,
+      "before_primary": 0.7768,
+      "mechanism": "memory_consolidation",
+      "verdict": "PARK"
+    },
     "baseline": {
       "active": [],
       "aggregate_primary": 0.7768
     }
   },
-  "parked": [],
+  "parked": [
+    "memory_consolidation"
+  ],
   "promoted": [],
   "rejected": []
 }

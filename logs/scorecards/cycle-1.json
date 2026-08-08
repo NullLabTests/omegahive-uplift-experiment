@@ -1,0 +1,119 @@
+{
+  "after": {
+    "active": [
+      "memory_consolidation"
+    ],
+    "aggregate_primary": 0.8081,
+    "aggregate_robustness": 0.3429,
+    "envs": {
+      "maze": {
+        "efficiency": 0.4867,
+        "env": "maze",
+        "robustness": 0.3429,
+        "steps": 56.5714,
+        "success_rate": 0.6929,
+        "transfer_gain": 0.0857
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 0.2857142857142857,
+        "robustness": 0.8571,
+        "steps": 5.0,
+        "success_rate": 0.9643
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.5898,
+      "repoops": 0.9643,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "before": {
+    "active": [],
+    "aggregate_primary": 0.7768,
+    "aggregate_robustness": 0.2857,
+    "envs": {
+      "maze": {
+        "efficiency": 0.4867,
+        "env": "maze",
+        "robustness": 0.3429,
+        "steps": 56.5714,
+        "success_rate": 0.6929,
+        "transfer_gain": 0.0857
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 1.0,
+        "robustness": 0.2857,
+        "steps": 5.0,
+        "success_rate": 0.875
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.5898,
+      "repoops": 0.875,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "cycle": 1,
+  "mechanism": "memory_consolidation",
+  "name": "cycle-1",
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707
+  ],
+  "verdict": {
+    "after_primary": 0.8081,
+    "after_robustness": 0.3429,
+    "before_primary": 0.7768,
+    "before_robustness": 0.2857,
+    "delta_primary": 0.0313,
+    "delta_robustness": 0.0572,
+    "mechanism": "memory_consolidation",
+    "rel_delta_primary": 0.0403,
+    "rule": {
+      "park_threshold": ">= -5% rel primary",
+      "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+    },
+    "verdict": "PARK"
+  }
+}

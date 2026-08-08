@@ -1,0 +1,3 @@
+{"sender": "arch", "kind": "proposal", "payload": {"cycle": 1, "mechanism": "memory_consolidation", "active": []}, "ts": 1786208680.865}
+{"sender": "impl", "kind": "implemented", "payload": {"mechanism": "memory_consolidation"}, "ts": 1786208680.865}
+{"sender": "gov", "kind": "verdict", "payload": {"mechanism": "memory_consolidation", "verdict": "PARK", "before_primary": 0.7768, "after_primary": 0.8081, "delta_primary": 0.0313, "rel_delta_primary": 0.0403, "before_robustness": 0.2857, "after_robustness": 0.3429, "delta_robustness": 0.0572, "rule": {"promote_threshold": "+5% rel primary and robustness drop <= 10 pts", "park_threshold": ">= -5% rel primary"}}, "ts": 1786208681.919}
