@@ -167,3 +167,9 @@
 [2026-08-08 19:30:13] INFO: p6 proposal state loaded from checkpoint
 [2026-08-08 19:30:13] GOVERNOR: p6 audit: strategy success_signature_policy registered hooks=['propose'] zero_task_hook_handlers=True (zero by construction (no before_eval/choose_action/after_write/retrieve handler))
 [2026-08-08 19:30:13] INFO: p6 arm-2 randomization control seed=2026 permutation={"seed": 2026, "domain_map": {"maze": "selflab", "repoops": "repoops", "selflab": "maze"}, "hook_class_map": {"choose_action": "retrieve", "after_write": "after_write", "retrieve": "before_eval", "before_eval": "choose_action"}}
+[2026-08-08 19:30:13] GIT: committed p6-proposal-state
+[2026-08-08 19:30:14] INFO: p6 incumbent measured on 21 seeds: primary=0.9480 (expected ~0.9480)
+[2026-08-08 19:30:14] INFO: p6 arm-0 (baseline) starts; probe=frontier_memory_v3 incumbent=['uncertainty_planning', 'residual_bias', 'progress_thermostat']
+[2026-08-08 19:30:14] PROPOSAL: p6 arm-0 (baseline) memo: {}
+[2026-08-08 19:30:14] INFO: p6 arm-0 probe configured via memo parameterization: {"success_gated": false, "min_confirmations": 1, "beta": 0.1, "penalty": 1.0, "reward": -0.8, "approach": 4, "decay": 0.5}
+[2026-08-08 19:30:15] GOVERNOR: p6 arm-0 (baseline): agg delta=-0.0327 Q=-0.402803 (headroom 0.0812) | per-seed mean=-0.0327 sd=0.0679 neg=15/21 | maze mean=-0.0818 sd=0.1697 | elapsed 1.3s
