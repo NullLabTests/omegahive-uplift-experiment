@@ -81,3 +81,4 @@
 [2026-08-08 18:23:15] GOVERNOR: not both promoted (A=PROMOTE, B=PARK); no final-hive aggregate measured (current active=['uncertainty_planning', 'residual_bias'])
 [2026-08-08 18:23:15] INFO: phase-4 finished; final active set: ['uncertainty_planning', 'residual_bias'] promoted=['residual_bias'] parked=['evidence_substrate'] rejected=[]
 [2026-08-08 18:24:21] DIAGNOSTIC: final-hive [uncertainty_planning,residual_bias,evidence_substrate] 21seed primary=0.9220 (robust=0.5238) == evidence_substrate single-shot 0.9220 == additive projection 0.9220; residual_bias adds +0.0000 beyond evidence_substrate -> stacked gains are REDUNDANT, not compounding
+[2026-08-08 18:25:32] INFO: p4-baseline measured: 21seed primary=0.8847 robust=0.4286; 7seed primary=0.8710
