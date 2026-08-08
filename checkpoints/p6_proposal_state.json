@@ -4,6 +4,304 @@
     "residual_bias",
     "progress_thermostat"
   ],
+  "arms": {
+    "arm0": {
+      "condition": "baseline",
+      "config": {
+        "approach": 4,
+        "beta": 0.1,
+        "decay": 0.5,
+        "min_confirmations": 1,
+        "penalty": 1.0,
+        "reward": -0.8,
+        "success_gated": false
+      },
+      "delta": -0.0327,
+      "delta_mean": -0.0327,
+      "delta_sd": 0.0679,
+      "incumbent": [
+        "uncertainty_planning",
+        "residual_bias",
+        "progress_thermostat"
+      ],
+      "incumbent_primary_21": 0.948,
+      "index": 0,
+      "maze_mean": -0.0818,
+      "maze_negative": 15,
+      "maze_sd": 0.1697,
+      "memo": {},
+      "negative_seeds": 15,
+      "per_seed_deltas": [
+        0.0019,
+        -0.0722,
+        0.0051,
+        -0.0812,
+        0.0684,
+        0.0044,
+        -0.0347,
+        0.0082,
+        -0.0195,
+        -0.0405,
+        -0.0101,
+        -0.0114,
+        -0.0386,
+        -0.0114,
+        -0.0152,
+        -0.0135,
+        0.012,
+        -0.2809,
+        -0.1329,
+        -0.0165,
+        -0.0083
+      ],
+      "positive_seeds": 6,
+      "probe": "frontier_memory_v3",
+      "q": -0.402803,
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ],
+      "target_domain": "maze",
+      "target_headroom": 0.0812
+    },
+    "arm1": {
+      "condition": "active",
+      "config": {
+        "approach": 4,
+        "beta": 0.03,
+        "decay": 0.5,
+        "min_confirmations": 2,
+        "penalty": 1.0,
+        "reward": -0.8,
+        "success_gated": true
+      },
+      "delta": -0.026,
+      "delta_mean": -0.026,
+      "delta_sd": 0.0271,
+      "incumbent": [
+        "uncertainty_planning",
+        "residual_bias",
+        "progress_thermostat"
+      ],
+      "incumbent_primary_21": 0.948,
+      "index": 1,
+      "maze_mean": -0.065,
+      "maze_negative": 16,
+      "maze_sd": 0.0677,
+      "memo": {
+        "failure_signatures": [
+          {
+            "aggregate_delta": 0.0056,
+            "mechanism": "frontier_memory",
+            "signature": "frontier_memory failed in maze/choose_action (agg delta +0.0056, sd 0.143): single-episode penalization made credit noise-dominated (per-seed maze sd 0.143 vs mean +0.014; worst single-seed -0.53)"
+          },
+          {
+            "aggregate_delta": 0.0123,
+            "mechanism": "frontier_memory_v2",
+            "signature": "frontier_memory_v2 failed in maze/choose_action (agg delta +0.0123, sd 0.1146): calibrated success-gated >=2-confirmation credit recovered a small real gain; 5/21 seeds still negative"
+          }
+        ],
+        "hook_class_constraint": [
+          "propose (machinery) \u2014 the only hook-class not claimed by any known task mechanism"
+        ],
+        "least_covered_task_classes": [
+          "before_eval",
+          "retrieve"
+        ],
+        "parameterization": {
+          "approach": 4,
+          "beta": 0.03,
+          "decay": 0.5,
+          "min_confirmations": 2,
+          "penalty": 1.0,
+          "rationale": "history shows noise-dominated frontier credit; use the phase-3 success-gated >=2-confirmations calibration that worked",
+          "reward": -0.8,
+          "success_gated": true
+        },
+        "target_domain": "maze"
+      },
+      "negative_seeds": 16,
+      "per_seed_deltas": [
+        0.0004,
+        -0.0722,
+        0.0051,
+        -0.0745,
+        0.026,
+        0.0044,
+        -0.0347,
+        0.0082,
+        -0.0177,
+        -0.0329,
+        -0.0633,
+        -0.0456,
+        -0.0424,
+        -0.0114,
+        -0.0152,
+        -0.0129,
+        -0.0228,
+        -0.0567,
+        -0.0424,
+        -0.038,
+        -0.0076
+      ],
+      "positive_seeds": 5,
+      "probe": "frontier_memory_v3",
+      "q": -0.320221,
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ],
+      "target_domain": "maze",
+      "target_headroom": 0.0812
+    },
+    "arm2": {
+      "condition": "randomized",
+      "config": {
+        "approach": 4,
+        "beta": 0.1,
+        "decay": 0.5,
+        "min_confirmations": 1,
+        "penalty": 1.0,
+        "reward": -0.8,
+        "success_gated": false
+      },
+      "delta": -0.0327,
+      "delta_mean": -0.0327,
+      "delta_sd": 0.0679,
+      "incumbent": [
+        "uncertainty_planning",
+        "residual_bias",
+        "progress_thermostat"
+      ],
+      "incumbent_primary_21": 0.948,
+      "index": 2,
+      "maze_mean": -0.0818,
+      "maze_negative": 15,
+      "maze_sd": 0.1697,
+      "memo": {
+        "failure_signatures": [
+          {
+            "aggregate_delta": 0.0056,
+            "mechanism": "frontier_memory",
+            "signature": "frontier_memory failed in selflab/retrieve (agg delta +0.0056, sd 0.143): single-episode penalization made credit noise-dominated (per-seed maze sd 0.143 vs mean +0.014; worst single-seed -0.53)"
+          },
+          {
+            "aggregate_delta": 0.0123,
+            "mechanism": "frontier_memory_v2",
+            "signature": "frontier_memory_v2 failed in selflab/retrieve (agg delta +0.0123, sd 0.1146): calibrated success-gated >=2-confirmation credit recovered a small real gain; 5/21 seeds still negative"
+          }
+        ],
+        "hook_class_constraint": [
+          "propose (machinery) \u2014 the only hook-class not claimed by any known task mechanism"
+        ],
+        "least_covered_task_classes": [
+          "before_eval",
+          "retrieve"
+        ],
+        "parameterization": {
+          "approach": 4,
+          "beta": 0.1,
+          "decay": 0.5,
+          "min_confirmations": 1,
+          "penalty": 1.0,
+          "rationale": "history carries no noise signal for the probe class; naive single-episode config (the phase-2 frontier_memory design)",
+          "reward": -0.8,
+          "success_gated": false
+        },
+        "target_domain": "maze"
+      },
+      "negative_seeds": 15,
+      "per_seed_deltas": [
+        0.0019,
+        -0.0722,
+        0.0051,
+        -0.0812,
+        0.0684,
+        0.0044,
+        -0.0347,
+        0.0082,
+        -0.0195,
+        -0.0405,
+        -0.0101,
+        -0.0114,
+        -0.0386,
+        -0.0114,
+        -0.0152,
+        -0.0135,
+        0.012,
+        -0.2809,
+        -0.1329,
+        -0.0165,
+        -0.0083
+      ],
+      "positive_seeds": 6,
+      "probe": "frontier_memory_v3",
+      "q": -0.402803,
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ],
+      "target_domain": "maze",
+      "target_headroom": 0.0812
+    }
+  },
   "domains": [
     "maze",
     "repoops",
@@ -32,7 +330,7 @@
       "weight": 0.25
     }
   },
-  "next_log_id": 6,
+  "next_log_id": 9,
   "overlap_table": {
     "attention_budget": [
       "retrieve"
@@ -169,8 +467,89 @@
       "negative_seeds": 3,
       "rel_delta": 0.0421,
       "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": -0.0327,
+      "condition": "baseline",
+      "count": 21,
+      "failure_signature": "empty-memo baseline (naive config)",
+      "hook_class": "choose_action",
+      "id": 6,
+      "maze_delta_mean": -0.0818,
+      "maze_delta_sd": 0.1697,
+      "mechanism": "frontier_memory_v3",
+      "negative_seeds": 15,
+      "rel_delta": -0.0345,
+      "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": -0.026,
+      "condition": "active",
+      "count": 21,
+      "failure_signature": "memo-guided probe (success-signature policy)",
+      "hook_class": "choose_action",
+      "id": 7,
+      "maze_delta_mean": -0.065,
+      "maze_delta_sd": 0.0677,
+      "mechanism": "frontier_memory_v3",
+      "negative_seeds": 16,
+      "rel_delta": -0.0274,
+      "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": -0.0327,
+      "condition": "randomized",
+      "count": 21,
+      "failure_signature": "permuted-history memo (misattributed associations)",
+      "hook_class": "choose_action",
+      "id": 8,
+      "maze_delta_mean": -0.0818,
+      "maze_delta_sd": 0.1697,
+      "mechanism": "frontier_memory_v3",
+      "negative_seeds": 15,
+      "rel_delta": -0.0345,
+      "target_domain": "maze"
     }
   ],
+  "strategy_verdict": {
+    "conditions": {
+      "attribution_holds": false,
+      "no_task_axis_regression": false,
+      "q1_ge_1p05_q0": true,
+      "q1_ge_1p05_q2": true
+    },
+    "delta": {
+      "0": -0.0327,
+      "1": -0.026,
+      "2": -0.0327
+    },
+    "matched_q1_vs_q2": {
+      "attribution_holds": false,
+      "losses": 7,
+      "ties": 7,
+      "wins": 7
+    },
+    "negative_seeds": {
+      "arm0": 15,
+      "arm1": 16,
+      "arm2": 15
+    },
+    "q": {
+      "0": -0.402803,
+      "1": -0.320221,
+      "2": -0.402803
+    },
+    "rule": {
+      "constitutional": false,
+      "name": "strategy gate (EXPERIMENTAL, not constitutional)",
+      "park_threshold": "Q1 >= 0.95*Q0",
+      "promote_thresholds": "Q1 >= 1.05*Q0 AND Q1 >= 1.05*Q2 AND neg1 <= neg0 AND matched Q1 > Q2 (majority)",
+      "reject_threshold": "Q1 < 0.95*Q0"
+    },
+    "strategy": "success_signature_policy",
+    "target_domain_headroom": 0.0812,
+    "verdict": "PARK"
+  },
   "weights": {
     "maze": 0.4,
     "repoops": 0.35,

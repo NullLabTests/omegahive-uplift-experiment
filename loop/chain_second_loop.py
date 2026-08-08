@@ -461,6 +461,17 @@ def main() -> None:
     else:
         log_decision("INFO", "p6 proposal state loaded from checkpoint")
 
+    if state.get("strategy_verdict") is not None:
+        log_decision(
+            "INFO", f"p6 clean exit: phase-6 already completed with strategy "
+            f"verdict={state['strategy_verdict']['verdict']}; refusing to "
+            f"re-run arms (no duplicate measurement)")
+        print(json.dumps(
+            {"outcome": "clean-exit", "already_completed": True,
+             "strategy_verdict": state["strategy_verdict"]["verdict"],
+             "proposal_state": proposal_state.STATE_PATH}, indent=2))
+        return
+
     # ---- honest governor's audit ------------------------------------------
     audit = audit_strategy()
     log_decision("GOVERNOR",

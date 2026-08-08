@@ -229,3 +229,10 @@
 [2026-08-08 19:30:59] GOVERNOR: p6 arm-2 (randomized): agg delta=-0.0327 Q=-0.402803 (headroom 0.0812) | per-seed mean=-0.0327 sd=0.0679 neg=15/21 | maze mean=-0.0818 sd=0.1697 | elapsed 1.3s
 [2026-08-08 19:30:59] GIT: committed p6-arm2
 [2026-08-08 19:30:59] GOVERNOR: p6 strategy gate: Q0=-0.402803 Q1=-0.320221 Q2=-0.402803 | deltas {0: -0.0327, 1: -0.026, 2: -0.0327} | neg {'arm0': 15, 'arm1': 16, 'arm2': 15} | matched Q1>Q2 wins=7 losses=7 ties=7 | conditions={'q1_ge_1p05_q0': True, 'q1_ge_1p05_q2': True, 'no_task_axis_regression': False, 'attribution_holds': False} => PARK
+[2026-08-08 19:30:59] GIT: committed p6-strategy-park
+[2026-08-08 19:30:59] GOVERNOR: p6 strategy verdict PARK: in-band machinery produced no measured compounding (H-LIN supported); no monotonicity cycle run
+[2026-08-08 19:30:59] INFO: phase-6 finished in 4.9s; strategy verdict=PARK; proposal state at /home/codespace/omegahive-experiment/checkpoints/p6_proposal_state.json
+[2026-08-08 19:34:16] INFO: PHASE 6 starts: second-loop experiment, H-VC vs H-LIN, in-band proposal machinery
+[2026-08-08 19:34:16] ARCHITECT: success_signature_policy design rationale: the phase-5 post-analysis showed the improvement machinery sits outside the hive (static ROSTER/RATIONALE in loop/architect.py); the proposed strategy is a mechanism occupying the NEW in-band 'propose' hook so that history (headroom, promotion signatures, overlap table, proposal log) is the ONLY channel into the next proposal. H-VC mechanism: memo = (a) target domain = highest remaining headroom weighted by aggregate weight; (b) hook-class constraint = class not in the overlap table's covered set; (c) parameterization = success-gated, >=2 confirmations (the phase-3 calibration that worked) when history shows the probe class's credit was noise-dominated; (d) top-2 failure signatures from the proposal log.
+[2026-08-08 19:34:16] INFO: p6 proposal state loaded from checkpoint
+[2026-08-08 19:34:16] INFO: p6 clean exit: phase-6 already completed with strategy verdict=PARK; refusing to re-run arms (no duplicate measurement)
