@@ -1,0 +1,1 @@
+{"$schema": "https://opencode.ai/config.json", "model": "opencode/deepseek-v4-flash-free", "provider": {"opencode": {"models": {"deepseek-v4-flash-free": {"options": {"temperature": 0.4}}}}}, "small_model": "opencode/deepseek-v4-flash-free", "share": "disabled"}
