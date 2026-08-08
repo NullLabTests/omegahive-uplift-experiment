@@ -1,0 +1,39 @@
+{
+  "conditions": {
+    "attribution_holds": false,
+    "no_task_axis_regression": false,
+    "q1_ge_1p05_q0": true,
+    "q1_ge_1p05_q2": true
+  },
+  "delta": {
+    "0": -0.0327,
+    "1": -0.026,
+    "2": -0.0327
+  },
+  "matched_q1_vs_q2": {
+    "attribution_holds": false,
+    "losses": 7,
+    "ties": 7,
+    "wins": 7
+  },
+  "negative_seeds": {
+    "arm0": 15,
+    "arm1": 16,
+    "arm2": 15
+  },
+  "q": {
+    "0": -0.402803,
+    "1": -0.320221,
+    "2": -0.402803
+  },
+  "rule": {
+    "constitutional": false,
+    "name": "strategy gate (EXPERIMENTAL, not constitutional)",
+    "park_threshold": "Q1 >= 0.95*Q0",
+    "promote_thresholds": "Q1 >= 1.05*Q0 AND Q1 >= 1.05*Q2 AND neg1 <= neg0 AND matched Q1 > Q2 (majority)",
+    "reject_threshold": "Q1 < 0.95*Q0"
+  },
+  "strategy": "success_signature_policy",
+  "target_domain_headroom": 0.0812,
+  "verdict": "PARK"
+}

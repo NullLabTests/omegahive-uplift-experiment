@@ -501,8 +501,8 @@ def main() -> None:
 
     log_decision(
         "GOVERNOR",
-        f"p6 strategy gate: Q0={verdict['q']['0']:+.6f} "
-        f"Q1={verdict['q']['1']:+.6f} Q2={verdict['q']['2']:+.6f} | "
+        f"p6 strategy gate: Q0={verdict['q'][0]:+.6f} "
+        f"Q1={verdict['q'][1]:+.6f} Q2={verdict['q'][2]:+.6f} | "
         f"deltas {verdict['delta']} | neg {verdict['negative_seeds']} | "
         f"matched Q1>Q2 wins={verdict['matched_q1_vs_q2']['wins']} "
         f"losses={verdict['matched_q1_vs_q2']['losses']} "
