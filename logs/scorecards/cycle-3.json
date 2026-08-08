@@ -1,0 +1,119 @@
+{
+  "after": {
+    "active": [
+      "uncertainty_planning"
+    ],
+    "aggregate_primary": 0.871,
+    "aggregate_robustness": 0.2857,
+    "envs": {
+      "maze": {
+        "efficiency": 0.8936,
+        "env": "maze",
+        "robustness": 0.3143,
+        "steps": 24.4,
+        "success_rate": 0.7571,
+        "transfer_gain": 0.1429
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 1.0,
+        "robustness": 0.2857,
+        "steps": 5.0,
+        "success_rate": 0.875
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82535,
+      "repoops": 0.875,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "before": {
+    "active": [],
+    "aggregate_primary": 0.7768,
+    "aggregate_robustness": 0.2857,
+    "envs": {
+      "maze": {
+        "efficiency": 0.4867,
+        "env": "maze",
+        "robustness": 0.3429,
+        "steps": 56.5714,
+        "success_rate": 0.6929,
+        "transfer_gain": 0.0857
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 1.0,
+        "robustness": 0.2857,
+        "steps": 5.0,
+        "success_rate": 0.875
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.5898,
+      "repoops": 0.875,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "cycle": 3,
+  "mechanism": "uncertainty_planning",
+  "name": "cycle-3",
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707
+  ],
+  "verdict": {
+    "after_primary": 0.871,
+    "after_robustness": 0.2857,
+    "before_primary": 0.7768,
+    "before_robustness": 0.2857,
+    "delta_primary": 0.0942,
+    "delta_robustness": 0.0,
+    "mechanism": "uncertainty_planning",
+    "rel_delta_primary": 0.1213,
+    "rule": {
+      "park_threshold": ">= -5% rel primary",
+      "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+    },
+    "verdict": "PROMOTE"
+  }
+}

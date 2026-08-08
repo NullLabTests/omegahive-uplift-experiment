@@ -1,5 +1,7 @@
 {
-  "active": [],
+  "active": [
+    "uncertainty_planning"
+  ],
   "cycles": {
     "1": {
       "active_after": [],
@@ -15,6 +17,15 @@
       "mechanism": "attention_budget",
       "verdict": "PARK"
     },
+    "3": {
+      "active_after": [
+        "uncertainty_planning"
+      ],
+      "after_primary": 0.871,
+      "before_primary": 0.7768,
+      "mechanism": "uncertainty_planning",
+      "verdict": "PROMOTE"
+    },
     "baseline": {
       "active": [],
       "aggregate_primary": 0.7768
@@ -24,6 +35,8 @@
     "memory_consolidation",
     "attention_budget"
   ],
-  "promoted": [],
+  "promoted": [
+    "uncertainty_planning"
+  ],
   "rejected": []
 }

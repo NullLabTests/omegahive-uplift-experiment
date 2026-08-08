@@ -1,0 +1,3 @@
+{"sender": "arch", "kind": "proposal", "payload": {"cycle": 3, "mechanism": "uncertainty_planning", "active": []}, "ts": 1786208683.001}
+{"sender": "impl", "kind": "implemented", "payload": {"mechanism": "uncertainty_planning"}, "ts": 1786208683.001}
+{"sender": "gov", "kind": "verdict", "payload": {"mechanism": "uncertainty_planning", "verdict": "PROMOTE", "before_primary": 0.7768, "after_primary": 0.871, "delta_primary": 0.0942, "rel_delta_primary": 0.1213, "before_robustness": 0.2857, "after_robustness": 0.2857, "delta_robustness": 0.0, "rule": {"promote_threshold": "+5% rel primary and robustness drop <= 10 pts", "park_threshold": ">= -5% rel primary"}}, "ts": 1786208683.955}

@@ -13,3 +13,10 @@
 [2026-08-08 17:04:42] GOVERNOR: cycle 2 attention_budget: before=0.7768 after=0.7983 rel=+2.8% rob=+0.0572 => PARK
 [2026-08-08 17:04:42] GOVERNOR: cycle 2 commentary: Effect is neutral (within +/-5%): real but sub-threshold. Catalog the mechanism for possible future re-proposal; it does not join the active set now.
 [2026-08-08 17:04:42] INFO: cycle 2 finished in 1.1s, verdict=PARK
+[2026-08-08 17:04:42] GIT: committed cycle-2-attention_budget-park
+[2026-08-08 17:04:42] INFO: cycle 3 starts; active=[]
+[2026-08-08 17:04:42] ARCHITECT: cycle 3 proposes 'uncertainty_planning': The Maze agent explores blind: its frontier targets are random, so it wastes most of its step budget re-crossing explored territory. Targeting frontier cells with the best expected information gain per step, biased toward the goal, should both cut step counts drastically and lift success on hard mazes. Expected: the strongest single-env gain in the ecology.
+[2026-08-08 17:04:42] IMPLEMENTER: cycle 3 loaded mechanisms.uncertainty_planning
+[2026-08-08 17:04:43] GOVERNOR: cycle 3 uncertainty_planning: before=0.7768 after=0.8710 rel=+12.1% rob=+0.0000 => PROMOTE
+[2026-08-08 17:04:43] GOVERNOR: cycle 3 commentary: Measured improvement exceeds threshold with no robustness regression; incorporating the mechanism into the hive state.
+[2026-08-08 17:04:43] INFO: cycle 3 finished in 1.0s, verdict=PROMOTE
