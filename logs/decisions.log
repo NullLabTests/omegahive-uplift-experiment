@@ -105,3 +105,7 @@
 [2026-08-08 18:44:04] GOVERNOR: p5-cycle per-domain rows: {'maze': 0.1165, 'repoops': 0.0, 'selflab': 0.0}
 [2026-08-08 18:44:04] GOVERNOR: p5-cycle maze variance (21 seeds): mean=+0.0958 sd=0.1389 min=-0.1078 max=+0.6161 positive 17/21 negative 3/21
 [2026-08-08 18:44:04] INFO: p5-cycle PROMOTED progress_thermostat; incumbent now ['uncertainty_planning', 'residual_bias', 'progress_thermostat']
+[2026-08-08 18:44:04] GIT: committed p5-cycle-progress_thermostat-promote
+[2026-08-08 18:44:04] INFO: p5 audit: measuring marginal contributions A=[up] B=[up,rb] C=[up,mech] D=[up,rb,mech] on 21 seeds
+[2026-08-08 18:44:07] GOVERNOR: p5-audit (21 seeds): A=[up] agg=0.8847 maze=0.8229; C=[up,mech] agg=0.9230 maze=0.9188 => mech maze delta WITHOUT rb=+0.0959 (rel +11.65%); mech maze delta WITH rb=+0.0959 (rel +11.65%); repoops delta=+0.0000 selflab delta=+0.0000 => orthogonal=True
+[2026-08-08 18:44:07] GOVERNOR: p5-final-hive ['uncertainty_planning', 'residual_bias', 'progress_thermostat']: 21seed primary=0.9480 robust=0.6381 | phase4 ceiling=0.9220 beats_ceiling=+0.0260 | incumbent=0.9097 cycle_gain=+0.0383 additive_projection=0.9480 compounding_excess=+0.0000 | headroom-maze rel=+11.65%

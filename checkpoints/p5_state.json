@@ -4,6 +4,15 @@
     "residual_bias",
     "progress_thermostat"
   ],
+  "audit": {
+    "A_up": 0.8847,
+    "C_up_mech": 0.923,
+    "maze_delta_with_rb": 0.0959,
+    "maze_delta_without_rb": 0.0959,
+    "orthogonal": true,
+    "repoops_delta": 0.0,
+    "selflab_delta": 0.0
+  },
   "baseline": {
     "baseline_21": {
       "active": [
@@ -134,6 +143,17 @@
       "verdict": "PROMOTE",
       "worst_domain_rel": 0.0
     }
+  },
+  "final_hive": {
+    "active": [
+      "uncertainty_planning",
+      "residual_bias",
+      "progress_thermostat"
+    ],
+    "aggregate_primary_21": 0.948,
+    "aggregate_robustness_21": 0.6381,
+    "beats_ceiling": 0.026,
+    "phase4_ceiling": 0.922
   },
   "parked": [],
   "promoted": [
