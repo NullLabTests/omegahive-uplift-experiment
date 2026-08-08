@@ -1,0 +1,144 @@
+{
+  "baseline_21": {
+    "active": [
+      "uncertainty_planning"
+    ],
+    "aggregate_primary": 0.8847,
+    "aggregate_robustness": 0.4286,
+    "envs": {
+      "maze": {
+        "efficiency": 0.834,
+        "env": "maze",
+        "robustness": 0.5048,
+        "steps": 29.1095,
+        "success_rate": 0.8119,
+        "transfer_gain": 0.1476
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 0.6666666666666666,
+        "robustness": 0.4286,
+        "steps": 5.0,
+        "success_rate": 0.9167
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82295,
+      "repoops": 0.9167,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707,
+      808,
+      909,
+      1001,
+      1102,
+      1203,
+      1304,
+      1405,
+      1506,
+      1607,
+      1708,
+      1809,
+      1910,
+      2011,
+      2112
+    ]
+  },
+  "baseline_7": {
+    "active": [
+      "uncertainty_planning"
+    ],
+    "aggregate_primary": 0.871,
+    "aggregate_robustness": 0.2857,
+    "envs": {
+      "maze": {
+        "efficiency": 0.8936,
+        "env": "maze",
+        "robustness": 0.3143,
+        "steps": 24.4,
+        "success_rate": 0.7571,
+        "transfer_gain": 0.1429
+      },
+      "repoops": {
+        "env": "repoops",
+        "human_rescue": 1.0,
+        "robustness": 0.2857,
+        "steps": 5.0,
+        "success_rate": 0.875
+      },
+      "selflab": {
+        "env": "selflab",
+        "human_rescue": 0.0,
+        "quality": 0.826,
+        "robustness": 0.9386,
+        "steps": 24.0,
+        "success_rate": 0.9386
+      }
+    },
+    "primaries": {
+      "maze": 0.82535,
+      "repoops": 0.875,
+      "selflab": 0.9386
+    },
+    "seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707
+    ]
+  },
+  "incumbent": [
+    "uncertainty_planning"
+  ],
+  "results": {},
+  "seeds_21": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707,
+    808,
+    909,
+    1001,
+    1102,
+    1203,
+    1304,
+    1405,
+    1506,
+    1607,
+    1708,
+    1809,
+    1910,
+    2011,
+    2112
+  ],
+  "seeds_7": [
+    101,
+    202,
+    303,
+    404,
+    505,
+    606,
+    707
+  ]
+}
