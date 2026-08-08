@@ -1,0 +1,12 @@
+{
+  "baseline": 0.8847,
+  "es_single_shot": 0.922,
+  "final_hive": 0.922,
+  "hive_primaries": {
+    "maze": 0.8538,
+    "repoops": 0.9881,
+    "selflab": 0.9386
+  },
+  "hive_robust": 0.5238,
+  "rb_single_shot": 0.9097
+}

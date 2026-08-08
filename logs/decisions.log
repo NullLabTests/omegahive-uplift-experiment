@@ -77,3 +77,7 @@
 [2026-08-08 18:23:15] GOVERNOR: p4-cycle-2 evidence_substrate: per-domain 21seed before=0.9097 after=0.9220 agg_rel=+1.35% promoting_domain=maze@+3.75% worst_domain=repoops@+0.00% => PARK  | constitutional reference=PARK (+1.35%)
 [2026-08-08 18:23:15] GOVERNOR: p4-cycle-2 per-domain rows: {'maze': 0.0375, 'repoops': 0.0, 'selflab': 0.0}
 [2026-08-08 18:23:15] GOVERNOR: p4-cycle-2 maze variance (21 seeds): mean=+0.0308 sd=0.1146 min=-0.1187 max=+0.5101 positive 11/21 negative 5/21
+[2026-08-08 18:23:15] GIT: committed p4-cycle-2-evidence_substrate-park
+[2026-08-08 18:23:15] GOVERNOR: not both promoted (A=PROMOTE, B=PARK); no final-hive aggregate measured (current active=['uncertainty_planning', 'residual_bias'])
+[2026-08-08 18:23:15] INFO: phase-4 finished; final active set: ['uncertainty_planning', 'residual_bias'] promoted=['residual_bias'] parked=['evidence_substrate'] rejected=[]
+[2026-08-08 18:24:21] DIAGNOSTIC: final-hive [uncertainty_planning,residual_bias,evidence_substrate] 21seed primary=0.9220 (robust=0.5238) == evidence_substrate single-shot 0.9220 == additive projection 0.9220; residual_bias adds +0.0000 beyond evidence_substrate -> stacked gains are REDUNDANT, not compounding
