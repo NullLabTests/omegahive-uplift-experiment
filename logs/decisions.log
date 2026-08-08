@@ -82,3 +82,9 @@
 [2026-08-08 18:23:15] INFO: phase-4 finished; final active set: ['uncertainty_planning', 'residual_bias'] promoted=['residual_bias'] parked=['evidence_substrate'] rejected=[]
 [2026-08-08 18:24:21] DIAGNOSTIC: final-hive [uncertainty_planning,residual_bias,evidence_substrate] 21seed primary=0.9220 (robust=0.5238) == evidence_substrate single-shot 0.9220 == additive projection 0.9220; residual_bias adds +0.0000 beyond evidence_substrate -> stacked gains are REDUNDANT, not compounding
 [2026-08-08 18:25:32] INFO: p4-baseline measured: 21seed primary=0.8847 robust=0.4286; 7seed primary=0.8710
+[2026-08-08 18:25:32] GIT: committed p4-baseline
+[2026-08-08 18:25:32] INFO: p4-cycle-1 starts; mech=residual_bias incumbent=['uncertainty_planning']
+[2026-08-08 18:25:39] GOVERNOR: p4-cycle-1 residual_bias: per-domain 21seed before=0.8847 after=0.9097 agg_rel=+2.83% promoting_domain=repoops@+7.79% worst_domain=maze@+0.00% => PROMOTE  | constitutional reference=PARK (+2.83%)
+[2026-08-08 18:25:39] GOVERNOR: p4-cycle-1 per-domain rows: {'maze': 0.0, 'repoops': 0.0779, 'selflab': 0.0}
+[2026-08-08 18:25:39] GOVERNOR: p4-cycle-1 repoops variance (21 seeds): mean=+0.0714 sd=0.0729 min=+0.0000 max=+0.2500 positive 11/21 negative 0/21
+[2026-08-08 18:25:39] INFO: p4-cycle-1 PROMOTED residual_bias; incumbent now ['uncertainty_planning', 'residual_bias']
