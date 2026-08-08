@@ -47,3 +47,9 @@
 [2026-08-08 17:31:15] GOVERNOR: chained-cycle-1 transfer probe: {'mechA_in_maze': 0.0, 'mechB_in_repoops': 0.0714, 'mechB_in_selflab': 0.0}
 [2026-08-08 17:31:15] GIT: committed chained-cycle-1-residual_bias-park
 [2026-08-08 17:31:15] INFO: chaining finished; final active set: ['uncertainty_planning'] promoted=['uncertainty_planning'] parked=['memory_consolidation', 'attention_budget', 'residual_bias', 'frontier_memory'] rejected=[]
+[2026-08-08 18:08:20] ARCHITECT: phase3 baseline incumbent=['uncertainty_planning']
+[2026-08-08 18:08:22] INFO: phase3 baseline measured: 21seed primary=0.8847 robust=0.4286; 7seed primary=0.8710
+[2026-08-08 18:08:22] INFO: phase3 cycle-3 starts; mech=frontier_memory_v2 incumbent=['uncertainty_planning'] target=maze
+[2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 frontier_memory_v2: 21seed before=0.8847 after=0.8970 rel=+1.4% rob=+0.0000 => PARK  | 7seed rel=+0.6% verdict=PARK  | per-env {'maze': 0.0309, 'repoops': 0.0, 'selflab': 0.0}
+[2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 target-domain variance (maze, 21 seeds): mean=+0.0308 sd=0.1146 min=-0.1187 max=+0.5101 positive 11/21 negative 5/21
+[2026-08-08 18:08:28] GOVERNOR: phase3-cycle-3 transfer probe: {'mechC_in_repoops': 0.0, 'mechC_in_selflab': 0.0}

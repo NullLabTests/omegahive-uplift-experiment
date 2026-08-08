@@ -156,6 +156,64 @@
         "verdict": "PARK"
       }
     },
+    "frontier_memory_v2": {
+      "cycle": 3,
+      "incumbent": [
+        "uncertainty_planning"
+      ],
+      "mech": "frontier_memory_v2",
+      "per_env_delta_21": {
+        "maze": 0.0309,
+        "repoops": 0.0,
+        "selflab": 0.0
+      },
+      "scorecard": "p3-cycle-3-frontier_memory_v2",
+      "target_domain": "maze",
+      "transfer_probe": {
+        "mechC_in_repoops": 0.0,
+        "mechC_in_selflab": 0.0
+      },
+      "variance_target": {
+        "count": 21,
+        "domain": "maze",
+        "max": 0.5101,
+        "mean": 0.0308,
+        "min": -0.1187,
+        "negative": 5,
+        "positive": 11,
+        "sd": 0.1146
+      },
+      "verdict_21": {
+        "after_primary": 0.897,
+        "after_robustness": 0.4286,
+        "before_primary": 0.8847,
+        "before_robustness": 0.4286,
+        "delta_primary": 0.0123,
+        "delta_robustness": 0.0,
+        "mechanism": "frontier_memory_v2",
+        "rel_delta_primary": 0.0139,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      },
+      "verdict_7": {
+        "after_primary": 0.8761,
+        "after_robustness": 0.2857,
+        "before_primary": 0.871,
+        "before_robustness": 0.2857,
+        "delta_primary": 0.0051,
+        "delta_robustness": 0.0,
+        "mechanism": "frontier_memory_v2",
+        "rel_delta_primary": 0.0059,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      }
+    },
     "residual_bias": {
       "cycle": 1,
       "incumbent": [
