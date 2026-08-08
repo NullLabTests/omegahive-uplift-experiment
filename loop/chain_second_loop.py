@@ -495,7 +495,7 @@ def main() -> None:
 
     # ---- strategy gate -----------------------------------------------------
     verdict = gate_strategy.apply_rule(
-        {"0": arm0, "1": arm1, "2": arm2},
+        {0: arm0, 1: arm1, 2: arm2},
         snapshot["headroom"]["maze"]["remaining_headroom"], STRATEGY)
     write_strategy_scorecard(verdict, {0: arm0, 1: arm1, 2: arm2})
 
