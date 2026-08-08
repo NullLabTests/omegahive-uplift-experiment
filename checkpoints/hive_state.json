@@ -29,11 +29,23 @@
     "baseline": {
       "active": [],
       "aggregate_primary": 0.7768
+    },
+    "chained-1": {
+      "active_after": [
+        "uncertainty_planning"
+      ],
+      "after_primary": 0.9097,
+      "before_primary": 0.8847,
+      "delta_robustness": 0.0762,
+      "mechanism": "residual_bias",
+      "rel_delta_primary": 0.0283,
+      "verdict": "PARK"
     }
   },
   "parked": [
     "memory_consolidation",
-    "attention_budget"
+    "attention_budget",
+    "residual_bias"
   ],
   "promoted": [
     "uncertainty_planning"

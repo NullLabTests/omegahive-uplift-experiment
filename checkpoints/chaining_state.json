@@ -108,7 +108,55 @@
   "incumbent": [
     "uncertainty_planning"
   ],
-  "results": {},
+  "results": {
+    "residual_bias": {
+      "cycle": 1,
+      "incumbent": [
+        "uncertainty_planning"
+      ],
+      "mech": "residual_bias",
+      "per_env_delta_21": {
+        "maze": 0.0,
+        "repoops": 0.0714,
+        "selflab": 0.0
+      },
+      "transfer_probe": {
+        "mechA_in_maze": 0.0,
+        "mechB_in_repoops": 0.0714,
+        "mechB_in_selflab": 0.0
+      },
+      "verdict_21": {
+        "after_primary": 0.9097,
+        "after_robustness": 0.5048,
+        "before_primary": 0.8847,
+        "before_robustness": 0.4286,
+        "delta_primary": 0.025,
+        "delta_robustness": 0.0762,
+        "mechanism": "residual_bias",
+        "rel_delta_primary": 0.0283,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      },
+      "verdict_7": {
+        "after_primary": 0.9085,
+        "after_robustness": 0.3143,
+        "before_primary": 0.871,
+        "before_robustness": 0.2857,
+        "delta_primary": 0.0375,
+        "delta_robustness": 0.0286,
+        "mechanism": "residual_bias",
+        "rel_delta_primary": 0.0431,
+        "rule": {
+          "park_threshold": ">= -5% rel primary",
+          "promote_threshold": "+5% rel primary and robustness drop <= 10 pts"
+        },
+        "verdict": "PARK"
+      }
+    }
+  },
   "seeds_21": [
     101,
     202,
