@@ -58,3 +58,6 @@ Hard constraints:
 - Stay within hardware limits (4 cores, 16 GB). Prefer working, measurable, honest experiments over incomplete ambitious ones.
 - Log every major decision and error to logs/decisions.log.
 - When finished, write STATUS.md and exit cleanly.
+
+## CRITICAL EXECUTION DIRECTIVE
+Do NOT merely acknowledge this mission. START WORKING NOW, immediately, step by step, using your tools. Create the directory structure, write the hive code, write the eval environments, write the driver, run the baseline, run the 3 cycles, commit to git after each cycle, and write all deliverable reports. Do not stop until STATUS.md exists and the experiment is complete. If you hit rate limit errors, sleep 60-120 seconds and retry. Work autonomously without asking for confirmation.
