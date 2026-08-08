@@ -20,3 +20,5 @@
 [2026-08-08 17:04:43] GOVERNOR: cycle 3 uncertainty_planning: before=0.7768 after=0.8710 rel=+12.1% rob=+0.0000 => PROMOTE
 [2026-08-08 17:04:43] GOVERNOR: cycle 3 commentary: Measured improvement exceeds threshold with no robustness regression; incorporating the mechanism into the hive state.
 [2026-08-08 17:04:43] INFO: cycle 3 finished in 1.0s, verdict=PROMOTE
+[2026-08-08 17:04:43] GIT: committed cycle-3-uncertainty_planning-promote
+[2026-08-08 17:04:43] INFO: driver finished; final active set: ['uncertainty_planning']; promoted=['uncertainty_planning'] parked=['memory_consolidation', 'attention_budget'] rejected=[]
