@@ -100,3 +100,8 @@
 [2026-08-08 18:40:05] IMPLEMENTER: smoke test 21-seed [up,rb,progress_thermostat] vs incumbent [up,rb]. maze primary 0.82295 -> 0.91885 (+11.65% rel); repoops/selflab exactly 0.0000 delta (perfect domain isolation). 7-seed: maze +7.82% rel. Bugs fixed during dev: prototype sorting bug (ascending vs descending) in offline probe; final module uses real harness via load_registry. 
 [2026-08-08 18:43:59] INFO: phase5 starts; mech=progress_thermostat incumbent=['uncertainty_planning', 'residual_bias'] ceiling=0.922
 [2026-08-08 18:44:01] INFO: p5-baseline measured: 21seed primary=0.9097 robust=0.5048; 7seed primary=0.9085
+[2026-08-08 18:44:01] GIT: committed p5-baseline
+[2026-08-08 18:44:04] GOVERNOR: p5-cycle progress_thermostat: per-domain 21seed before=0.9097 after=0.9480 agg_rel=+4.21% promoting_domain=maze@+11.65% worst_domain=repoops@+0.00% => PROMOTE  | constitutional reference=PARK (+4.21%)
+[2026-08-08 18:44:04] GOVERNOR: p5-cycle per-domain rows: {'maze': 0.1165, 'repoops': 0.0, 'selflab': 0.0}
+[2026-08-08 18:44:04] GOVERNOR: p5-cycle maze variance (21 seeds): mean=+0.0958 sd=0.1389 min=-0.1078 max=+0.6161 positive 17/21 negative 3/21
+[2026-08-08 18:44:04] INFO: p5-cycle PROMOTED progress_thermostat; incumbent now ['uncertainty_planning', 'residual_bias', 'progress_thermostat']

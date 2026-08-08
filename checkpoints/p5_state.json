@@ -1,7 +1,8 @@
 {
   "active": [
     "uncertainty_planning",
-    "residual_bias"
+    "residual_bias",
+    "progress_thermostat"
   ],
   "baseline": {
     "baseline_21": {
@@ -117,8 +118,26 @@
       "residual_bias"
     ]
   },
-  "cycles": {},
+  "cycles": {
+    "p5-1": {
+      "active_after": [
+        "uncertainty_planning",
+        "residual_bias",
+        "progress_thermostat"
+      ],
+      "after_primary": 0.948,
+      "before_primary": 0.9097,
+      "mechanism": "progress_thermostat",
+      "promoting_domain": "maze",
+      "promoting_domain_rel": 0.1165,
+      "rel_delta_primary": 0.0421,
+      "verdict": "PROMOTE",
+      "worst_domain_rel": 0.0
+    }
+  },
   "parked": [],
-  "promoted": [],
+  "promoted": [
+    "progress_thermostat"
+  ],
   "rejected": []
 }
