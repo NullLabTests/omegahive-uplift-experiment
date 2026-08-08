@@ -1,0 +1,179 @@
+{
+  "active_hive": [
+    "uncertainty_planning",
+    "residual_bias",
+    "progress_thermostat"
+  ],
+  "domains": [
+    "maze",
+    "repoops",
+    "selflab"
+  ],
+  "headroom": {
+    "maze": {
+      "current_primary": 0.9188,
+      "headroom_below_max": 0.0,
+      "max_observed_primary": 0.9188,
+      "remaining_headroom": 0.0812,
+      "weight": 0.4
+    },
+    "repoops": {
+      "current_primary": 0.9881,
+      "headroom_below_max": 0.0,
+      "max_observed_primary": 0.9881,
+      "remaining_headroom": 0.0119,
+      "weight": 0.35
+    },
+    "selflab": {
+      "current_primary": 0.9386,
+      "headroom_below_max": 0.0,
+      "max_observed_primary": 0.9386,
+      "remaining_headroom": 0.0614,
+      "weight": 0.25
+    }
+  },
+  "next_log_id": 6,
+  "overlap_table": {
+    "attention_budget": [
+      "retrieve"
+    ],
+    "evidence_substrate": [
+      "after_write",
+      "choose_action"
+    ],
+    "frontier_memory": [
+      "choose_action"
+    ],
+    "frontier_memory_v2": [
+      "choose_action"
+    ],
+    "frontier_memory_v3": [
+      "choose_action"
+    ],
+    "memory_consolidation": [
+      "after_write",
+      "before_eval"
+    ],
+    "pocket_detector": [
+      "choose_action"
+    ],
+    "progress_thermostat": [
+      "choose_action"
+    ],
+    "residual_bias": [
+      "after_write"
+    ],
+    "success_signature_policy": [
+      "propose"
+    ],
+    "uncertainty_planning": [
+      "choose_action"
+    ]
+  },
+  "promotion_signatures": [
+    {
+      "domain": "maze",
+      "hook_classes": [
+        "choose_action"
+      ],
+      "mechanism": "uncertainty_planning",
+      "rel_delta": 0.3994,
+      "source": "phase-1 promotion (7 seeds): maze primary 0.5898 -> 0.82535"
+    },
+    {
+      "domain": "repoops",
+      "hook_classes": [
+        "after_write"
+      ],
+      "mechanism": "residual_bias",
+      "rel_delta": 0.0779,
+      "source": "phase-4 promotion (21 seeds): repoops +7.79% rel"
+    },
+    {
+      "domain": "maze",
+      "hook_classes": [
+        "choose_action"
+      ],
+      "mechanism": "progress_thermostat",
+      "rel_delta": 0.1165,
+      "source": "phase-5 promotion (21 seeds): maze +11.65% rel"
+    }
+  ],
+  "proposal_log": [
+    {
+      "aggregate_delta": 0.025,
+      "condition": "historical",
+      "count": 21,
+      "failure_signature": "none (clean; repoops ceiling reached)",
+      "hook_class": "after_write",
+      "id": 1,
+      "maze_delta_mean": 0.0,
+      "maze_delta_sd": 0.0,
+      "mechanism": "residual_bias",
+      "negative_seeds": 0,
+      "rel_delta": 0.0283,
+      "target_domain": "repoops"
+    },
+    {
+      "aggregate_delta": 0.0056,
+      "condition": "historical",
+      "count": 21,
+      "failure_signature": "single-episode penalization made credit noise-dominated (per-seed maze sd 0.143 vs mean +0.014; worst single-seed -0.53)",
+      "hook_class": "choose_action",
+      "id": 2,
+      "maze_delta_mean": 0.0141,
+      "maze_delta_sd": 0.143,
+      "mechanism": "frontier_memory",
+      "negative_seeds": null,
+      "rel_delta": 0.0063,
+      "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": 0.0123,
+      "condition": "historical",
+      "count": 21,
+      "failure_signature": "calibrated success-gated >=2-confirmation credit recovered a small real gain; 5/21 seeds still negative",
+      "hook_class": "choose_action",
+      "id": 3,
+      "maze_delta_mean": 0.0309,
+      "maze_delta_sd": 0.1146,
+      "mechanism": "frontier_memory_v2",
+      "negative_seeds": 5,
+      "rel_delta": 0.0139,
+      "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": 0.0373,
+      "condition": "historical",
+      "count": 21,
+      "failure_signature": "multi-domain bundling was fully redundant with residual_bias on repoops (+0.0000 beyond rb)",
+      "hook_class": "choose_action",
+      "id": 4,
+      "maze_delta_mean": 0.0309,
+      "maze_delta_sd": 0.1146,
+      "mechanism": "evidence_substrate",
+      "negative_seeds": 5,
+      "rel_delta": 0.0422,
+      "target_domain": "maze"
+    },
+    {
+      "aggregate_delta": 0.0383,
+      "condition": "historical",
+      "count": 21,
+      "failure_signature": "none (clean; 17/21 positive)",
+      "hook_class": "choose_action",
+      "id": 5,
+      "maze_delta_mean": 0.0958,
+      "maze_delta_sd": 0.1389,
+      "mechanism": "progress_thermostat",
+      "negative_seeds": 3,
+      "rel_delta": 0.0421,
+      "target_domain": "maze"
+    }
+  ],
+  "weights": {
+    "maze": 0.4,
+    "repoops": 0.35,
+    "selflab": 0.25
+  }
+}

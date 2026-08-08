@@ -1,0 +1,8 @@
+{
+  "registered_hooks": [
+    "propose"
+  ],
+  "strategy": "success_signature_policy",
+  "task_impact": "zero by construction (no before_eval/choose_action/after_write/retrieve handler)",
+  "zero_task_hook_handlers": true
+}
