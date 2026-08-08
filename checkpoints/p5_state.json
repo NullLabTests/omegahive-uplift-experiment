@@ -127,6 +127,15 @@
       "residual_bias"
     ]
   },
+  "compounding_analysis": {
+    "actual_final_hive": 0.948,
+    "additive_projection": 0.948,
+    "base_up": 0.8847,
+    "compounding_excess": 0.0,
+    "note": "chain is perfectly ADDITIVE (orthogonal stack), not super-additive",
+    "pt_gain": 0.0383,
+    "rb_gain": 0.025
+  },
   "cycles": {
     "p5-1": {
       "active_after": [

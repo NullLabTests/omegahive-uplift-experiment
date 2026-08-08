@@ -1,0 +1,270 @@
+{
+  "beats_ceiling": 0.026,
+  "compounding_analysis": {
+    "actual_final_hive": 0.948,
+    "additive_projection": 0.948,
+    "base_up": 0.8847,
+    "compounding_excess": 0.0,
+    "note": "chain is perfectly ADDITIVE (orthogonal stack), not super-additive",
+    "pt_gain": 0.0383,
+    "rb_gain": 0.025
+  },
+  "final_hive_primary_21": 0.948,
+  "incumbent": [
+    "uncertainty_planning",
+    "residual_bias"
+  ],
+  "measurements": {
+    "A": {
+      "active": [
+        "uncertainty_planning"
+      ],
+      "aggregate_primary": 0.8847,
+      "aggregate_robustness": 0.4286,
+      "envs": {
+        "maze": {
+          "efficiency": 0.834,
+          "env": "maze",
+          "robustness": 0.5048,
+          "steps": 29.1095,
+          "success_rate": 0.8119,
+          "transfer_gain": 0.1476
+        },
+        "repoops": {
+          "env": "repoops",
+          "human_rescue": 0.6666666666666666,
+          "robustness": 0.4286,
+          "steps": 5.0,
+          "success_rate": 0.9167
+        },
+        "selflab": {
+          "env": "selflab",
+          "human_rescue": 0.0,
+          "quality": 0.826,
+          "robustness": 0.9386,
+          "steps": 24.0,
+          "success_rate": 0.9386
+        }
+      },
+      "primaries": {
+        "maze": 0.82295,
+        "repoops": 0.9167,
+        "selflab": 0.9386
+      },
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ]
+    },
+    "B": {
+      "active": [
+        "uncertainty_planning",
+        "residual_bias"
+      ],
+      "aggregate_primary": 0.9097,
+      "aggregate_robustness": 0.5048,
+      "envs": {
+        "maze": {
+          "efficiency": 0.834,
+          "env": "maze",
+          "robustness": 0.5048,
+          "steps": 29.1095,
+          "success_rate": 0.8119,
+          "transfer_gain": 0.1476
+        },
+        "repoops": {
+          "env": "repoops",
+          "human_rescue": 0.09523809523809523,
+          "robustness": 0.9048,
+          "steps": 5.0,
+          "success_rate": 0.9881
+        },
+        "selflab": {
+          "env": "selflab",
+          "human_rescue": 0.0,
+          "quality": 0.826,
+          "robustness": 0.9386,
+          "steps": 24.0,
+          "success_rate": 0.9386
+        }
+      },
+      "primaries": {
+        "maze": 0.82295,
+        "repoops": 0.9881,
+        "selflab": 0.9386
+      },
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ]
+    },
+    "C": {
+      "active": [
+        "uncertainty_planning",
+        "progress_thermostat"
+      ],
+      "aggregate_primary": 0.923,
+      "aggregate_robustness": 0.4286,
+      "envs": {
+        "maze": {
+          "efficiency": 0.9567,
+          "env": "maze",
+          "robustness": 0.6381,
+          "steps": 19.3143,
+          "success_rate": 0.881,
+          "transfer_gain": 0.0952
+        },
+        "repoops": {
+          "env": "repoops",
+          "human_rescue": 0.6666666666666666,
+          "robustness": 0.4286,
+          "steps": 5.0,
+          "success_rate": 0.9167
+        },
+        "selflab": {
+          "env": "selflab",
+          "human_rescue": 0.0,
+          "quality": 0.826,
+          "robustness": 0.9386,
+          "steps": 24.0,
+          "success_rate": 0.9386
+        }
+      },
+      "primaries": {
+        "maze": 0.91885,
+        "repoops": 0.9167,
+        "selflab": 0.9386
+      },
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ]
+    },
+    "D": {
+      "active": [
+        "uncertainty_planning",
+        "residual_bias",
+        "progress_thermostat"
+      ],
+      "aggregate_primary": 0.948,
+      "aggregate_robustness": 0.6381,
+      "envs": {
+        "maze": {
+          "efficiency": 0.9567,
+          "env": "maze",
+          "robustness": 0.6381,
+          "steps": 19.3143,
+          "success_rate": 0.881,
+          "transfer_gain": 0.0952
+        },
+        "repoops": {
+          "env": "repoops",
+          "human_rescue": 0.09523809523809523,
+          "robustness": 0.9048,
+          "steps": 5.0,
+          "success_rate": 0.9881
+        },
+        "selflab": {
+          "env": "selflab",
+          "human_rescue": 0.0,
+          "quality": 0.826,
+          "robustness": 0.9386,
+          "steps": 24.0,
+          "success_rate": 0.9386
+        }
+      },
+      "primaries": {
+        "maze": 0.91885,
+        "repoops": 0.9881,
+        "selflab": 0.9386
+      },
+      "seeds": [
+        101,
+        202,
+        303,
+        404,
+        505,
+        606,
+        707,
+        808,
+        909,
+        1001,
+        1102,
+        1203,
+        1304,
+        1405,
+        1506,
+        1607,
+        1708,
+        1809,
+        1910,
+        2011,
+        2112
+      ]
+    }
+  },
+  "mechanism": "progress_thermostat",
+  "name": "p5-audit-nonredundancy",
+  "phase": "phase5",
+  "phase4_single_shot_ceiling": 0.922,
+  "single_mechanism_base": [
+    "uncertainty_planning"
+  ]
+}

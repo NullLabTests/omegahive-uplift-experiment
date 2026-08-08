@@ -1,4 +1,4 @@
-# STATUS — OmegaHive governed self-uplifting loop (phase 4: per-domain gate real-run complete)
+# STATUS — OmegaHive governed self-uplifting loop (phase 5: non-redundancy test complete)
 
 ## Phase-1 result (verified)
 Aggregate primary **0.7768 -> 0.8710 (+12.1%)** from the empty baseline. Promoted
@@ -85,29 +85,76 @@ Constitutional `checkpoints/hive_state.json` unchanged: active
 frontier_memory_v2, evidence_substrate]. Phase 4 is an experimental protocol, not
 a constitutional adoption.
 
+## Phase-5 result (non-redundancy test: H-NR vs H-GATE)
+Experimental per-domain gate again (NEW files only: `mechanisms/progress_thermostat.py`,
+`loop/chain_perdomain2.py`, `checkpoints/p5_state.json`). A maze-only, within-episode
+explore/exploit thermostat aimed at the UNCLAIMED Maze headroom, measured against
+the grown incumbent [uncertainty_planning, residual_bias] on 21 + 7 seeds.
+
+| stage | hive measured | 21-seed primary | agg rel | promoting domain (rel) | per-domain gate | constitutional reference |
+|---|---|---|---|---|---|---|
+| baseline | [up, residual_bias] | 0.9097 | — | — | — | — |
+| cycle | + progress_thermostat | **0.9480** | +4.21% | **maze +11.65%** (0.8229->0.9188) | **PROMOTE** | PARK (+4.21%) |
+| 7-seed re-run | + progress_thermostat | 0.9343 | +2.84% | maze +7.82% | PROMOTE | PARK |
+
+- **Verdict: H-NR CONFIRMED, H-GATE REFUTED.** The non-overlapping mechanism
+  cleared the per-domain gate against the grown incumbent (maze +11.65% rel, no
+  domain dropped; robustness improved 0.5048->0.6381).
+- **Headline: final hive [up, rb, progress_thermostat] 21-seed primary = 0.9480,
+  beating the 0.9220 phase-4 single-shot ceiling by +0.0260 (+2.8%).**
+- **Compounding: ADDITIVE, not super-additive.** base [up] 0.8847 + rb gain
+  +0.0250 + pt gain +0.0383 = 0.9480 = final hive exactly; compounding excess
+  +0.0000. The chain stacks non-overlapping gains linearly and beats any single
+  shot (pt alone 0.9230 already > es 0.9220), but no multiplicative term exists.
+- **Non-redundancy audit (21 seeds):** pt's maze gain is +0.0959 WITHOUT rb
+  (C-A) and +0.0959 WITH rb (D-B) — identical, hence orthogonal on Maze; repoops
+  delta +0.0000 and selflab delta +0.0000 — no overlap with residual_bias, audit
+  not confounded.
+- **Governor:** maze per-seed delta mean +0.0958, sd 0.1389 (sd > mean), 17/21
+  positive, 3/21 negative (worst -0.108). Aggregate per-seed mean +0.0383, 3/21
+  negative. Real but not Gaussian-stable; no domain regression on aggregate.
+- **Cumulative 5-phase answer:** the loop self-improves and CHAINS additively
+  when candidates are non-overlapping (RepoOps then Maze), and the chained hive
+  beats the single-shot ceiling. Goertzel's strong super-additive self-amplification
+  remains unsupported (excess exactly +0.0000). Additive self-assembler: YES;
+  runaway virtuous cycle: no evidence.
+- **Most valuable next experiment:** a SECOND maze mechanism orthogonal to BOTH
+  up (stateless info-gain) and progress_thermostat (proximity objective-flip),
+  e.g. within-episode dead-end topology memory, chained against [up, rb, pt] to
+  test whether the additive stack saturates or keeps climbing.
+
+## Final hive state
+Phase-5 experimental state (`checkpoints/p5_state.json`): active
+`["uncertainty_planning", "residual_bias", "progress_thermostat"]`, promoted
+`["progress_thermostat"]`. Aggregate primary **0.9480** (from phase-4 incumbent
+0.9097, +4.21%; from phase-1 baseline 0.7768: +22.0% cumulative). Constitutional
+`checkpoints/hive_state.json` unchanged (phase-5 is an experimental protocol, not
+a constitutional adoption).
+
 ## One-command re-runs (from /home/codespace/omegahive-experiment)
 ```bash
+python3 -m loop.chain_perdomain2   # phase-5 protocol (baseline + cycle + audit + final hive)
 python3 -m loop.chain_perdomain    # phase-4 protocol (baseline + cycle A + cycle B + diagnostics)
 python3 -m loop.chaining --phase3  # phase-3 protocol
 python3 -m loop.counterfactual     # offline rule counterfactual
 ```
 
 ## Artifacts
-- Scorecards: `logs/scorecards/p4-cycle-1-residual_bias-promote.{json,md}`,
-  `logs/scorecards/p4-cycle-2-evidence_substrate-park.{json,md}`,
-  `logs/scorecards/p4-diagnostic-final-hive.json`; report: `PHASE4_REPORT.md`
-- Experimental gate: `loop/gate_perdomain.py`; protocol: `loop/chain_perdomain.py`
-- Decisions: `logs/decisions.log`; state: `checkpoints/p4_state.json`
-- Git history: `p4-baseline`, `p4-cycle-1-residual_bias-promote`,
-  `p4-cycle-2-evidence_substrate-park`
+- Scorecards: `logs/scorecards/p5-cycle-progress_thermostat-promote.{json,md}`,
+  `logs/scorecards/p5-audit-nonredundancy.{json,md}`; report: `PHASE5_REPORT.md`
+- Experimental gate: `loop/gate_perdomain.py`; protocols: `loop/chain_perdomain.py`,
+  `loop/chain_perdomain2.py`
+- Mechanism: `mechanisms/progress_thermostat.py`
+- Decisions: `logs/decisions.log`; state: `checkpoints/p5_state.json`
+- Git history: `p5-baseline`, `p5-cycle-progress_thermostat-promote`,
+  `p5-final-hive`
 
 ## Constraints honored
 No core file modified (driver/governance/runner/envs/mechanisms/chaining/
-counterfactual untouched; only NEW files: gate_perdomain.py, chain_perdomain.py,
-scorecards, report, state). Pure stdlib; full phase-4 protocol ~7 s; well under
-1 GB RSS and 2600 code lines. Every scorecard number is from a real
-`aggregate(...)` run; the diagnostic final-hive run is explicitly logged as
-DIAGNOSTIC, not a verdict.
+counterfactual/gate_perdomain/chain_perdomain untouched; only NEW files:
+progress_thermostat.py, chain_perdomain2.py, scorecards, report, state). Pure
+stdlib; full phase-5 protocol ~10 s; well under 1 GB RSS and 2600 code lines.
+Every scorecard number is from a real `aggregate(...)` run.
 
 ## Exit
-Phase-4 experiment complete. Clean exit.
+Phase-5 experiment complete. Clean exit.
