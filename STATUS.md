@@ -1,4 +1,4 @@
-# STATUS — OmegaHive governed self-uplifting loop (phase 5: non-redundancy test complete)
+# STATUS — OmegaHive governed self-uplifting loop (phase 6: second-loop test complete, H-LIN supported)
 
 ## Phase-1 result (verified)
 Aggregate primary **0.7768 -> 0.8710 (+12.1%)** from the empty baseline. Promoted
@@ -123,16 +123,51 @@ the grown incumbent [uncertainty_planning, residual_bias] on 21 + 7 seeds.
   e.g. within-episode dead-end topology memory, chained against [up, rb, pt] to
   test whether the additive stack saturates or keeps climbing.
 
+## Phase-6 result (second loop: H-VC vs H-LIN, in-band proposal machinery)
+NEW files only (`loop/chain_second_loop.py`, `loop/proposal_state.py`,
+`loop/gate_strategy.py`, `mechanisms/success_signature_policy.py`,
+`mechanisms/frontier_memory_v3.py`, `mechanisms/pocket_detector.py`). The
+proposal strategy is now a mechanism on the in-band `propose` hook; its memo is
+the ONLY channel from history to the next proposal. SAME probe class
+`frontier_memory_v3` in all three arms, tuned per-arm ONLY via the memo.
+Measured against the mature incumbent [up, rb, pt] = 0.9480, target maze
+headroom 0.0812.
+
+| arm | condition | probe config | 21-seed agg delta | Q (delta/headroom) | neg |
+|---|---|---|---|---|---|
+| 0 | baseline (empty memo) | naive (success_gated=F, min_conf=1, β=0.10) | −0.0327 | **−0.402803** | 15/21 |
+| 1 | S active (real-history memo) | calibrated (success_gated=T, min_conf=2, β=0.03) | −0.0260 | **−0.320221** | 16/21 |
+| 2 | randomized (PERMUTED-history memo) | naive fallback | −0.0327 | **−0.402803** | 15/21 |
+
+- **Verdict: PARK → H-LIN SUPPORTED.** Q1 beats Q0/Q2 on aggregate (real
+  informational gain: maze sd 0.1697 → 0.0677) but negative-seed count
+  regressed (16 > 15) and the matched per-seed Q1-vs-Q2 split is exactly
+  **7 wins / 7 losses / 7 ties** — no attribution. In-band machinery produced no
+  measured compounding; strategy mechanisms are first-order.
+- **Attribution control worked:** the permuted history erased the maze/choose_action
+  noise signal, the strategy fell back to the naive config, so Q2 == Q0 == −0.402803
+  exactly — scrambled attribution degrades guidance to the no-guidance default.
+- **Monotonicity cycle: not run** (no promotion). Compounding excess: n/a.
+- **Capability-ceiling caveat (explicit):** even H-VC evidence would be
+  machinery-level compounding only; no mechanism modifies the LLM oracle's fixed
+  capability, so the strongest form of the self-uplifting claim stays untested.
+- **Most valuable next experiment:** same second-loop protocol with a
+  positive-headroom probe class — a genuinely new SelfLab mechanism (selflab
+  0.9386, unreachable until the parked attention_budget is promoted) — so that
+  a promotion and the monotonicity cycle become runnable.
+
 ## Final hive state
-Phase-5 experimental state (`checkpoints/p5_state.json`): active
-`["uncertainty_planning", "residual_bias", "progress_thermostat"]`, promoted
-`["progress_thermostat"]`. Aggregate primary **0.9480** (from phase-4 incumbent
-0.9097, +4.21%; from phase-1 baseline 0.7768: +22.0% cumulative). Constitutional
-`checkpoints/hive_state.json` unchanged (phase-5 is an experimental protocol, not
-a constitutional adoption).
+Constitutional `checkpoints/hive_state.json` unchanged (active
+`["uncertainty_planning"]`). Experimental phase-5 state
+(`checkpoints/p5_state.json`) unchanged: active
+`["uncertainty_planning", "residual_bias", "progress_thermostat"]`, aggregate
+primary **0.9480**. Phase-6 state (`checkpoints/p6_proposal_state.json`):
+three-arm measurement + strategy verdict **PARK**, proposal log entries 6–8.
+Phase 6 is an experimental protocol, not a constitutional adoption.
 
 ## One-command re-runs (from /home/codespace/omegahive-experiment)
 ```bash
+python3 -m loop.chain_second_loop  # phase-6 protocol (three-arm probe + strategy gate; clean-exit guard)
 python3 -m loop.chain_perdomain2   # phase-5 protocol (baseline + cycle + audit + final hive)
 python3 -m loop.chain_perdomain    # phase-4 protocol (baseline + cycle A + cycle B + diagnostics)
 python3 -m loop.chaining --phase3  # phase-3 protocol
@@ -140,21 +175,24 @@ python3 -m loop.counterfactual     # offline rule counterfactual
 ```
 
 ## Artifacts
-- Scorecards: `logs/scorecards/p5-cycle-progress_thermostat-promote.{json,md}`,
-  `logs/scorecards/p5-audit-nonredundancy.{json,md}`; report: `PHASE5_REPORT.md`
-- Experimental gate: `loop/gate_perdomain.py`; protocols: `loop/chain_perdomain.py`,
-  `loop/chain_perdomain2.py`
-- Mechanism: `mechanisms/progress_thermostat.py`
-- Decisions: `logs/decisions.log`; state: `checkpoints/p5_state.json`
-- Git history: `p5-baseline`, `p5-cycle-progress_thermostat-promote`,
-  `p5-final-hive`
+- Scorecards: `logs/scorecards/p6-arm0.{json,md}`, `p6-arm1.{json,md}`,
+  `p6-arm2.{json,md}`, `p6-audit.json`, `p6-strategy-park.{json,md}`;
+  report: `PHASE6_REPORT.md`
+- Experimental gate: `loop/gate_strategy.py`; substrate: `loop/proposal_state.py`,
+  `checkpoints/p6_proposal_state.json`; protocol: `loop/chain_second_loop.py`
+- Mechanisms: `mechanisms/success_signature_policy.py` (strategy),
+  `mechanisms/frontier_memory_v3.py` (probe), `mechanisms/pocket_detector.py`
+  (monotonicity-cycle candidate, unused — strategy parked)
+- Decisions: `logs/decisions.log`; git: `p6-proposal-state`, `p6-arm0/1/2`,
+  `p6-strategy-park`, `p6-final-state`
 
 ## Constraints honored
-No core file modified (driver/governance/runner/envs/mechanisms/chaining/
-counterfactual/gate_perdomain/chain_perdomain untouched; only NEW files:
-progress_thermostat.py, chain_perdomain2.py, scorecards, report, state). Pure
-stdlib; full phase-5 protocol ~10 s; well under 1 GB RSS and 2600 code lines.
-Every scorecard number is from a real `aggregate(...)` run.
+No core file modified (driver/governance/runner/envs/mechanisms pre-phase-6/
+chaining/counterfactual/gate_perdomain/chain_perdomain untouched; only NEW
+files: the six phase-6 files above, scorecards, report, state). Pure stdlib;
+full phase-6 protocol ~5 s; well under 1 GB RSS and 2600 code lines. Every
+scorecard number is from a real `run_ecology()`/`aggregate()` run. Constitutional
+state never touched.
 
 ## Exit
-Phase-5 experiment complete. Clean exit.
+Phase-6 experiment complete. Clean exit.
