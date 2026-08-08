@@ -8,13 +8,21 @@
       "mechanism": "memory_consolidation",
       "verdict": "PARK"
     },
+    "2": {
+      "active_after": [],
+      "after_primary": 0.7983,
+      "before_primary": 0.7768,
+      "mechanism": "attention_budget",
+      "verdict": "PARK"
+    },
     "baseline": {
       "active": [],
       "aggregate_primary": 0.7768
     }
   },
   "parked": [
-    "memory_consolidation"
+    "memory_consolidation",
+    "attention_budget"
   ],
   "promoted": [],
   "rejected": []

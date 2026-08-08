@@ -6,3 +6,10 @@
 [2026-08-08 17:04:41] GOVERNOR: cycle 1 memory_consolidation: before=0.7768 after=0.8081 rel=+4.0% rob=+0.0572 => PARK
 [2026-08-08 17:04:41] GOVERNOR: cycle 1 commentary: Effect is neutral (within +/-5%): real but sub-threshold. Catalog the mechanism for possible future re-proposal; it does not join the active set now.
 [2026-08-08 17:04:41] INFO: cycle 1 finished in 1.1s, verdict=PARK
+[2026-08-08 17:04:41] GIT: committed cycle-1-memory_consolidation-park
+[2026-08-08 17:04:41] INFO: cycle 2 starts; active=[]
+[2026-08-08 17:04:41] ARCHITECT: cycle 2 proposes 'attention_budget': SelfLab's quality estimates are polluted by noisy warm-up samples; RepoOps and Maze process every candidate equally regardless of relevance. A hard capacity limit on each consider step, focused on the most salient items (value x recency), should sharpen SelfLab's estimate, keep RepoOps evidence focused, and stop the Maze agent from wandering across the whole map. Expected: clear gains in SelfLab, some in Maze.
+[2026-08-08 17:04:41] IMPLEMENTER: cycle 2 loaded mechanisms.attention_budget
+[2026-08-08 17:04:42] GOVERNOR: cycle 2 attention_budget: before=0.7768 after=0.7983 rel=+2.8% rob=+0.0572 => PARK
+[2026-08-08 17:04:42] GOVERNOR: cycle 2 commentary: Effect is neutral (within +/-5%): real but sub-threshold. Catalog the mechanism for possible future re-proposal; it does not join the active set now.
+[2026-08-08 17:04:42] INFO: cycle 2 finished in 1.1s, verdict=PARK

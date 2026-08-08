@@ -1,0 +1,3 @@
+{"sender": "arch", "kind": "proposal", "payload": {"cycle": 2, "mechanism": "attention_budget", "active": []}, "ts": 1786208681.932}
+{"sender": "impl", "kind": "implemented", "payload": {"mechanism": "attention_budget"}, "ts": 1786208681.932}
+{"sender": "gov", "kind": "verdict", "payload": {"mechanism": "attention_budget", "verdict": "PARK", "before_primary": 0.7768, "after_primary": 0.7983, "delta_primary": 0.0215, "rel_delta_primary": 0.0277, "before_robustness": 0.2857, "after_robustness": 0.3429, "delta_robustness": 0.0572, "rule": {"promote_threshold": "+5% rel primary and robustness drop <= 10 pts", "park_threshold": ">= -5% rel primary"}}, "ts": 1786208682.988}
