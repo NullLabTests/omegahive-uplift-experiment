@@ -129,3 +129,8 @@
 [2026-08-08 18:47:08] INFO: phase-5 finished; final active set: ['uncertainty_planning', 'residual_bias', 'progress_thermostat'] promoted=['progress_thermostat'] parked=[] rejected=[]
 [2026-08-08 19:15:37] INFO: phase5 starts; mech=progress_thermostat incumbent=['uncertainty_planning', 'residual_bias'] ceiling=0.922
 [2026-08-08 19:15:39] INFO: p5-baseline measured: 21seed primary=0.9097 robust=0.5048; 7seed primary=0.9085
+[2026-08-08 19:15:39] GIT: committed p5-baseline
+[2026-08-08 19:15:43] GOVERNOR: p5-cycle progress_thermostat: per-domain 21seed before=0.9097 after=0.9480 agg_rel=+4.21% promoting_domain=maze@+11.65% worst_domain=repoops@+0.00% => PROMOTE  | constitutional reference=PARK (+4.21%)
+[2026-08-08 19:15:43] GOVERNOR: p5-cycle per-domain rows: {'maze': 0.1165, 'repoops': 0.0, 'selflab': 0.0}
+[2026-08-08 19:15:43] GOVERNOR: p5-cycle maze variance (21 seeds): mean=+0.0958 sd=0.1389 min=-0.1078 max=+0.6161 positive 17/21 negative 3/21
+[2026-08-08 19:15:43] INFO: p5-cycle PROMOTED progress_thermostat; incumbent now ['uncertainty_planning', 'residual_bias', 'progress_thermostat']
