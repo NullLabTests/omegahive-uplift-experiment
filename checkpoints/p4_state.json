@@ -128,9 +128,25 @@
       "rel_delta_primary": 0.0283,
       "verdict": "PROMOTE",
       "worst_domain_rel": 0.0
+    },
+    "p4-2": {
+      "active_after": [
+        "uncertainty_planning",
+        "residual_bias"
+      ],
+      "after_primary": 0.922,
+      "before_primary": 0.9097,
+      "mechanism": "evidence_substrate",
+      "promoting_domain": "maze",
+      "promoting_domain_rel": 0.0375,
+      "rel_delta_primary": 0.0135,
+      "verdict": "PARK",
+      "worst_domain_rel": 0.0
     }
   },
-  "parked": [],
+  "parked": [
+    "evidence_substrate"
+  ],
   "promoted": [
     "residual_bias"
   ],
